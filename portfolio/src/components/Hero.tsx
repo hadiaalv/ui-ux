@@ -175,28 +175,24 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE - WITH PLACEHOLDER FIX */}
         <motion.div
           variants={itemVariants}
           className="md:w-1/2 flex justify-center relative"
         >
           <motion.div
-            animate={{
-              y: [0, -20, 0],
-            }}
+            animate={{ y: [0, -20, 0] }}
             transition={{
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative"
+            className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]"
             style={{ perspective: "1000px" }}
           >
             {/* 3D Rotating Ring */}
             <motion.div
-              animate={{
-                rotateY: 360,
-              }}
+              animate={{ rotateY: 360 }}
               transition={{
                 duration: 10,
                 repeat: Infinity,
@@ -205,7 +201,8 @@ export default function Hero() {
               className="absolute inset-0 rounded-full border-4 border-blue-300 opacity-50"
               style={{ transformStyle: "preserve-3d" }}
             />
-            
+
+            {/* Glow Effect */}
             <motion.div
               animate={{
                 scale: [1, 1.1, 1],
@@ -218,19 +215,35 @@ export default function Hero() {
               }}
               className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 blur-2xl"
             />
-            
+
+            {/* Profile Image - USING PLACEHOLDER FOR NOW */}
             <motion.div
               whileHover={{ scale: 1.05, rotateZ: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
+              className="relative z-10 w-full h-full overflow-hidden rounded-full border-8 border-blue-500 shadow-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center"
             >
-              <Image
-                src="/profile.png"
-                alt="Profile"
+              {/* TEMPORARY FIX: Use a beautiful placeholder */}
+              <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
+                <div className="text-6xl md:text-7xl font-bold text-blue-600 mb-4">HR</div>
+                <div className="text-lg font-semibold text-blue-700">Hassan Riaz</div>
+                <div className="text-sm text-gray-600 mt-2">UI/UX Designer</div>
+                
+                {/* OPTIONAL: Add decorative elements */}
+                <div className="absolute top-4 left-4 w-16 h-16 bg-blue-200 rounded-full opacity-20"></div>
+                <div className="absolute bottom-4 right-4 w-24 h-24 bg-purple-200 rounded-full opacity-20"></div>
+              </div>
+              
+              {/* COMMENT OUT THE IMAGE FOR NOW - UNCOMMENT WHEN FIXED */}
+              
+              {/* <Image
+                src="/h.jpeg"
+                alt="Hassan Riaz - UI/UX Designer"
                 width={400}
                 height={400}
-                className="rounded-full border-8 border-blue-500 shadow-2xl relative z-10 bg-white"
                 priority
-              />
+                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              /> */}
+             
             </motion.div>
           </motion.div>
 
