@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Hassan Riaz | Portfolio",
-  description: "UI/UX Designer",
+  title: "Hassan Riaz | UI/UX Designer Portfolio",
+  description: "Professional UI/UX Designer with 10+ years of experience in creating beautiful digital experiences",
 };
 
 export default function RootLayout({
@@ -14,9 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="antialiased">
         <Navbar />
-        <main className="min-h-screen px-6 md:px-16">{children}</main>
+        <main className="min-h-screen">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
