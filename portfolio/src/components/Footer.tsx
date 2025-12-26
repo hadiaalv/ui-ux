@@ -13,7 +13,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-blue-1000 text-white py-12">
+    <footer className="bg-blue-950 text-white py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}
