@@ -7,10 +7,10 @@ export default function Hero() {
       {/* LEFT TEXT */}
       <div className="md:w-1/2">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Hi, I'm <span className="text-blue-400">Hadia Alvi</span>
+          Hi, I'm <span className="text-blue-400">Hassan Riaz</span>
         </h1>
         <p className="text-gray-300 mb-6">
-          Full Stack Developer specializing in Next.js, TypeScript & modern web technologies.
+          A seasoned UI/UX graphic designer with over 10 years of experience. I specialize in creating stunning websites, intuitive icons, and a wide range of graphic elements. I bring designs to life using Adobe Illustrator, Adobe XD, Adobe Photos
         </p>
         <a
           href="/projects"

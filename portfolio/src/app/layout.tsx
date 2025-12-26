@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Hadia Alvi | Portfolio",
-  description: "Full Stack Developer Portfolio",
+  title: "Hassan Riaz | Portfolio",
+  description: "UI/UX Designer",
 };
 
 export default function RootLayout({
