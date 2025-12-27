@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaBehance, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Sparkles, Code, Palette, ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -154,6 +154,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex gap-4">
             {[
               // { Icon: FaGithub, href: "#" },
+              {Icon:FaBehance, href:"https://www.behance.net/iconsstock"},
               { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/" },
               // { Icon: FaTwitter, href: "#" },
             ].map(({ Icon, href }, index) => (

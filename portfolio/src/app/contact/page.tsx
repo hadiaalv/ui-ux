@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaBehance } from "react-icons/fa";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -35,6 +35,7 @@ export default function ContactPage() {
 
   const socialLinks = [
     { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/", label: "LinkedIn", color: "hover:text-blue-950" },
+    { Icon: FaBehance, href: "https://www.behance.net/iconsstock", label: "Behance", color: "hover:text-blue-950" },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {

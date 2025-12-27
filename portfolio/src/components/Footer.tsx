@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaDribbble, FaBehance } from "react-icons/fa";
 import { Heart, Mail } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
     // { Icon: FaGithub, href: "#", label: "GitHub" },
     { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/", label: "LinkedIn" },
+    { Icon: FaBehance, href: "https://www.behance.net/iconsstock", label: "Behance" }
     // { Icon: FaTwitter, href: "#", label: "Twitter" },
     // { Icon: FaDribbble, href: "#", label: "Dribbble" },
   ];
@@ -142,9 +143,9 @@ export default function Footer() {
               {/* <Heart size={16} className="text-red-400 fill-red-400" /> */}
             </motion.span>
           </p>
-          <p className="text-blue-200 text-sm">
+          {/* <p className="text-blue-200 text-sm">
             All rights reserved.
-          </p>
+          </p> */}
         </motion.div>
       </div>
     </footer>
