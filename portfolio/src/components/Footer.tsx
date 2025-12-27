@@ -6,10 +6,10 @@ import { Heart, Mail } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
-    { Icon: FaGithub, href: "#", label: "GitHub" },
-    { Icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { Icon: FaTwitter, href: "#", label: "Twitter" },
-    { Icon: FaDribbble, href: "#", label: "Dribbble" },
+    // { Icon: FaGithub, href: "#", label: "GitHub" },
+    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/", label: "LinkedIn" },
+    // { Icon: FaTwitter, href: "#", label: "Twitter" },
+    // { Icon: FaDribbble, href: "#", label: "Dribbble" },
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                hassan@example.com
+                edencolours3@gmail.com
               </motion.a>
 
               {/* Social Links */}

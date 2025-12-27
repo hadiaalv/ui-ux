@@ -16,31 +16,32 @@ export default function ContactPage() {
     { 
       icon: Mail, 
       label: "Email", 
-      value: "hassan@example.com", 
+      value: "edencolours3@gmail.com", 
       color: "from-blue-500 to-cyan-500",
-      href: "mailto:hassan@example.com"
+      href: "mailto:edencolours3@gmail.com"
     },
     { 
       icon: Phone, 
       label: "Phone", 
-      value: "+92 123 456 7890", 
+      value: "+92 305 7662 662", 
       color: "from-green-500 to-emerald-500",
-      href: "tel:+921234567890"
+      href: "tel:+923057662662"
     },
     { 
       icon: MapPin, 
       label: "Location", 
       value: "Faisalabad, Pakistan", 
       color: "from-purple-500 to-pink-500",
-      href: "#"
+      // href: "#"
     },
   ];
 
   const socialLinks = [
-    { Icon: FaGithub, href: "#", label: "GitHub", color: "hover:text-gray-900" },
-    { Icon: FaLinkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-600" },
-    { Icon: FaTwitter, href: "#", label: "Twitter", color: "hover:text-sky-500" },
-    { Icon: FaDribbble, href: "#", label: "Dribbble", color: "hover:text-pink-500" },
+    // { Icon: FaGithub, href: "#", label: "GitHub", color: "hover:text-gray-900" },
+    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/", label: "LinkedIn", color: "hover:text-blue-600" },
+    // { Icon: FaTwitter, href: "#", label: "Twitter", color: "hover:text-sky-500" },
+    // { Icon: FaDribbble, href: "#", label: "Dribbble", color: "hover:text-pink-500" },
+  
   ];
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -11,7 +11,6 @@ export default function Services() {
       description: "Creating intuitive and beautiful user interfaces that enhance user experience",
       tags: ["Figma", "Adobe XD", "Sketch"],
       duration: "2-4 weeks",
-      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: FileText,
@@ -19,7 +18,6 @@ export default function Services() {
       description: "Unique and eye-catching NFT artwork and collection design",
       tags: ["Digital Art", "Blockchain", "Collectibles"],
       duration: "1-2 weeks",
-      color: "from-purple-500 to-pink-500",
     },
     {
       icon: Code,
@@ -27,7 +25,6 @@ export default function Services() {
       description: "Custom icon sets and design systems for web and mobile applications",
       tags: ["Vector", "SVG", "Icon Sets"],
       duration: "50+ Icons",
-      color: "from-green-500 to-emerald-500",
     },
     {
       icon: Layers,
@@ -35,7 +32,6 @@ export default function Services() {
       description: "Responsive and modern website designs that convert visitors to customers",
       tags: ["Landing Pages", "E-commerce", "Portfolios"],
       duration: "3-6 weeks",
-      color: "from-orange-500 to-red-500",
     },
     {
       icon: Smartphone,
@@ -43,7 +39,6 @@ export default function Services() {
       description: "Mobile-first design approach for iOS and Android applications",
       tags: ["iOS", "Android", "Cross-platform"],
       duration: "4-8 weeks",
-      color: "from-indigo-500 to-purple-500",
     },
     {
       icon: Zap,
@@ -51,7 +46,6 @@ export default function Services() {
       description: "Complete brand identity including logos, color schemes, and style guides",
       tags: ["Logo", "Identity", "Guidelines"],
       duration: "2-3 weeks",
-      color: "from-pink-500 to-rose-500",
     },
   ];
 
@@ -113,12 +107,12 @@ export default function Services() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl opacity-30 blur-xl"
+              className="absolute inset-0 bg-blue-400 rounded-2xl opacity-30 blur-xl"
             />
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl"
+              className="relative w-20 h-20 bg-blue-950 rounded-2xl flex items-center justify-center shadow-2xl"
             >
               <Zap className="text-white" size={40} />
             </motion.div>
@@ -133,7 +127,7 @@ export default function Services() {
           >
             My{" "}
             <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -184,9 +178,9 @@ export default function Services() {
               {/* Animated Background Gradient */}
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
-                whileHover={{ scale: 2, opacity: 0.1 }}
+                whileHover={{ scale: 2, opacity: 0.05 }}
                 transition={{ duration: 0.4 }}
-                className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-3xl`}
+                className="absolute inset-0 bg-blue-950 rounded-3xl"
               />
 
               {/* Decorative Corner */}
@@ -200,7 +194,7 @@ export default function Services() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className={`absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br ${service.color} opacity-20 rounded-full blur-2xl`}
+                className="absolute -top-8 -right-8 w-32 h-32 bg-blue-950 opacity-10 rounded-full blur-2xl"
               />
 
               <div className="relative z-10">
@@ -208,13 +202,13 @@ export default function Services() {
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                  className="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
                 >
                   <service.icon className="text-white" size={32} />
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-950 transition-all">
                   {service.title}
                 </h3>
 
@@ -226,7 +220,7 @@ export default function Services() {
                 {/* Duration Badge */}
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${service.color} text-white rounded-full text-sm font-semibold mb-4 shadow-md`}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-950 text-white rounded-full text-sm font-semibold mb-4 shadow-md"
                 >
                   <Zap size={14} />
                   {service.duration}
@@ -242,7 +236,7 @@ export default function Services() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + i * 0.05 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium border border-blue-200"
+                      className="px-3 py-1 bg-blue-50 text-blue-950 rounded-full text-xs font-medium border border-blue-200"
                     >
                       {tag}
                     </motion.span>

@@ -114,7 +114,7 @@ export default function Hero() {
               UI/UX graphic designer
             </motion.span> with over 10 years of experience.
             I specialize in creating stunning websites, intuitive icons, and a
-            wide range of graphic elements using Adobe Illustrator, Adobe XD,
+            wide range of graphic elements using Adobe Illustrator, Figma, Adobe XD,
             and Photoshop.
           </motion.p>
 
@@ -153,9 +153,9 @@ export default function Hero() {
           {/* Social Icons */}
           <motion.div variants={itemVariants} className="flex gap-4">
             {[
-              { Icon: FaGithub, href: "#" },
-              { Icon: FaLinkedin, href: "#" },
-              { Icon: FaTwitter, href: "#" },
+              // { Icon: FaGithub, href: "#" },
+              { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/" },
+              // { Icon: FaTwitter, href: "#" },
             ].map(({ Icon, href }, index) => (
               <motion.a
                 key={index}
@@ -187,82 +187,101 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]"
-            style={{ perspective: "1000px" }}
+            className="relative w-full max-w-[400px]"
           >
-            {/* 3D Rotating Ring */}
-            <motion.div
-              animate={{ rotateY: 360 }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-0 rounded-full border-4 border-blue-300 opacity-50"
-              style={{ transformStyle: "preserve-3d" }}
-            />
-
-            {/* Glow Effect */}
+            {/* Glow Effect Behind Image */}
             <motion.div
               animate={{
                 scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
+                opacity: [0.3, 0.5, 0.3],
               }}
               transition={{
                 duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute inset-0 bg-blue-400 rounded-full opacity-20 blur-2xl"
+              className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-3xl"
             />
 
-            {/* Profile Image */}
+            {/* Main Image Container */}
             <motion.div
-              whileHover={{ scale: 1.05, rotateZ: 5 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full h-full overflow-hidden rounded-full border-8 border-blue-950 shadow-2xl"
+              className="relative z-10 w-full shadow-2xl overflow-hidden"
             >
-              <Image
-                src="/h.jpeg"
-                alt="Hassan Riaz - UI/UX Designer"
-                width={400}
-                height={400}
-                priority
-                className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
-              />
+              <div className="relative w-full h-[400px] md:h-[500px]">
+                <Image
+                  src="/profile.png"
+                  alt="Hassan Riaz - UI/UX Designer"
+                  fill
+                  priority
+                  className="object-contain hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </motion.div>
-          </motion.div>
 
-          {/* Floating Icons with 3D effect */}
-          {[
-            { Icon: Code, position: "top-0 left-0", delay: 0 },
-            { Icon: Palette, position: "top-0 right-0", delay: 0.5 },
-            { Icon: Sparkles, position: "bottom-0 left-0", delay: 1 },
-          ].map(({ Icon, position, delay }, index) => (
+            {/* Floating Stats/Badges */}
             <motion.div
-              key={index}
-              initial={{ scale: 0, rotateZ: -180 }}
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 360],
-                y: [0, -10, 0],
-              }}
-              transition={{
-                delay,
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              whileHover={{ scale: 1.3, zIndex: 50 }}
-              className="absolute bg-blue-950 p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white"
-              style={{ 
-                transform: "translateZ(50px)",
-                transformStyle: "preserve-3d",
-              }}
+              initial={{ scale: 0, x: -20 }}
+              animate={{ scale: 1, x: 0 }}
+              transition={{ delay: 0.5, type: "spring" }}
+              className="absolute top-10 -left-6 bg-white px-6 py-4 rounded-2xl shadow-2xl border-2 border-blue-100"
             >
-              <Icon className="text-white" size={28} />
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <p className="text-3xl font-bold text-blue-950">12+</p>
+                <p className="text-sm text-gray-600">Year Experience</p>
+              </motion.div>
             </motion.div>
-          ))}
+
+            <motion.div
+              initial={{ scale: 0, x: 20 }}
+              animate={{ scale: 1, x: 0 }}
+              transition={{ delay: 0.7, type: "spring" }}
+              className="absolute bottom-10 -right-6 bg-white px-6 py-4 rounded-2xl shadow-2xl border-2 border-blue-100"
+            >
+              <motion.div
+                animate={{ rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <p className="text-3xl font-bold text-blue-950">400+</p>
+                <p className="text-sm text-gray-600">Projects Finished</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Floating Icons with 3D effect */}
+            {[
+              { Icon: Code, position: "top-0 left-0", delay: 0 },
+              { Icon: Palette, position: "top-0 right-0", delay: 0.5 },
+              { Icon: Sparkles, position: "bottom-0 left-0", delay: 1 },
+            ].map(({ Icon, position, delay }, index) => (
+              <motion.div
+                key={index}
+                initial={{ scale: 0, rotateZ: -180 }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 360],
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  delay,
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                whileHover={{ scale: 1.3, zIndex: 50 }}
+                className={`absolute ${position} bg-blue-950 p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white`}
+                style={{ 
+                  transform: "translateZ(50px)",
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <Icon className="text-white" size={28} />
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

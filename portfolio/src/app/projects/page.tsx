@@ -77,12 +77,12 @@ export default function ProjectsPage() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl opacity-30 blur-xl"
+              className="absolute inset-0 bg-blue-400 rounded-2xl opacity-30 blur-xl"
             />
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl"
+              className="relative w-20 h-20 bg-blue-950 rounded-2xl flex items-center justify-center shadow-2xl"
             >
               <Briefcase className="text-white" size={40} />
             </motion.div>
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
           >
             My{" "}
             <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}

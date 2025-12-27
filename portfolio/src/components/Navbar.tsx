@@ -35,7 +35,7 @@ export default function Navbar() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="inline-block"
               >
-                🎨
+                
               </motion.span>
               {" "}Hassan.ui/ux
             </Link>
