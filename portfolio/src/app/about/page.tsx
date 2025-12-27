@@ -5,19 +5,19 @@ import { User, Award, Zap, Target } from "lucide-react";
 
 export default function AboutPage() {
   const skills = [
-    { name: "UI/UX Design", level: 95, icon: "🎨", color: "from-blue-500 to-cyan-500" },
-    { name: "Adobe Suite", level: 90, icon: "🖌️", color: "from-purple-500 to-pink-500" },
-    { name: "Figma", level: 88, icon: "📐", color: "from-green-500 to-emerald-500" },
-    { name: "Web Development", level: 85, icon: "💻", color: "from-orange-500 to-red-500" },
-    { name: "Illustration", level: 92, icon: "✏️", color: "from-indigo-500 to-purple-500" },
-    { name: "Branding", level: 87, icon: "🎯", color: "from-pink-500 to-rose-500" },
+    { name: "UI/UX Design", level: 95, icon: "🎨" },
+    { name: "Adobe Suite", level: 90, icon: "🖌️" },
+    { name: "Figma", level: 88, icon: "📐" },
+    { name: "Web Development", level: 85, icon: "💻" },
+    { name: "Illustration", level: 92, icon: "✏️" },
+    { name: "Branding", level: 87, icon: "🎯" },
   ];
 
   const achievements = [
-    { icon: Award, value: "10+", label: "Years Experience", color: "from-yellow-400 to-orange-500" },
-    { icon: Zap, value: "200+", label: "Projects Completed", color: "from-blue-400 to-cyan-500" },
-    { icon: Target, value: "98%", label: "Client Satisfaction", color: "from-green-400 to-emerald-500" },
-    { icon: User, value: "50+", label: "Happy Clients", color: "from-purple-400 to-pink-500" },
+    { icon: Award, value: "10+", label: "Years Experience" },
+    { icon: Zap, value: "200+", label: "Projects Completed" },
+    { icon: Target, value: "98%", label: "Client Satisfaction" },
+    { icon: User, value: "50+", label: "Happy Clients" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function AboutPage() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-20 left-20 w-96 h-96 bg-purple-50 rounded-full opacity-50 blur-3xl"
+          className="absolute bottom-20 left-20 w-96 h-96 bg-blue-50 rounded-full opacity-50 blur-3xl"
         />
       </div>
 
@@ -76,12 +76,12 @@ export default function AboutPage() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl opacity-30 blur-xl"
+              className="absolute inset-0 bg-blue-400 rounded-2xl opacity-30 blur-xl"
             />
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl"
+              className="relative w-20 h-20 bg-blue-950 rounded-2xl flex items-center justify-center shadow-2xl"
             >
               <User className="text-white" size={40} />
             </motion.div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
           >
             About{" "}
             <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -116,7 +116,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ scale: 1.02 }}
-          className="mb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 rounded-3xl shadow-xl border border-blue-100 relative overflow-hidden"
+          className="mb-16 bg-gradient-to-br from-blue-50 via-blue-25 to-white p-8 rounded-3xl shadow-xl border border-blue-100 relative overflow-hidden"
         >
           <motion.div
             animate={{
@@ -128,10 +128,10 @@ export default function AboutPage() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20 blur-2xl"
+            className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full opacity-20 blur-2xl"
           />
           <p className="text-gray-700 text-lg leading-relaxed mb-4 relative z-10">
-            I'm a passionate <span className="font-semibold text-blue-600">full-stack developer</span> and <span className="font-semibold text-purple-600">UI/UX designer</span> with over 10 years of experience 
+            I'm a passionate <span className="font-semibold text-blue-950">full-stack developer</span> and <span className="font-semibold text-blue-950">UI/UX designer</span> with over 10 years of experience 
             in creating beautiful, functional, and user-centered digital experiences. My expertise spans 
             across modern web technologies including Next.js, React, TypeScript, and the complete Adobe Creative Suite.
           </p>
@@ -149,7 +149,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
-          {achievements.map(({ icon: Icon, value, label, color }, index) => (
+          {achievements.map(({ icon: Icon, value, label }, index) => (
             <motion.div
               key={label}
               initial={{ scale: 0, rotateY: -180 }}
@@ -169,13 +169,13 @@ export default function AboutPage() {
                   opacity: [0.1, 0.2, 0.1]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10`}
+                className="absolute inset-0 bg-blue-950 opacity-0 group-hover:opacity-10"
               />
               
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${color} rounded-xl mb-3 shadow-lg relative`}
+                className="inline-flex items-center justify-center w-14 h-14 bg-blue-950 rounded-xl mb-3 shadow-lg relative"
               >
                 <Icon className="text-white" size={28} />
               </motion.div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                     {skill.name}
                   </span>
                   <motion.span 
-                    className={`text-transparent bg-clip-text bg-gradient-to-r ${skill.color} font-bold text-lg`}
+                    className="text-blue-950 font-bold text-lg"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.1 }}
                   >
@@ -244,7 +244,7 @@ export default function AboutPage() {
                       delay: 0.7 + index * 0.1, 
                       ease: "easeOut" 
                     }}
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative overflow-hidden`}
+                    className="h-full bg-blue-950 rounded-full relative overflow-hidden"
                   >
                     <motion.div
                       animate={{

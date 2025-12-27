@@ -55,7 +55,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-purple-100 rounded-full opacity-30 blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100 rounded-full opacity-30 blur-3xl"
         />
       </div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
             initial={{ scale: 0, rotateZ: -180 }}
             animate={{ scale: 1, rotateZ: 0 }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold border-2 border-blue-200 shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-50 text-blue-950 px-4 py-2 rounded-full text-sm font-semibold border-2 border-blue-200 shadow-lg"
           >
             <motion.div
               animate={{ rotate: 360 }}
@@ -88,7 +88,7 @@ export default function Hero() {
           >
             Hi, I'm{" "}
             <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -107,7 +107,7 @@ export default function Hero() {
             className="text-gray-600 text-lg leading-relaxed"
           >
             A seasoned <motion.span
-              className="font-semibold text-blue-600"
+              className="font-semibold text-blue-950"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -121,9 +121,9 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center">
             <motion.a
               href="/projects"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(8, 47, 73, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all group"
+              className="inline-flex items-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all group"
             >
               <Code size={20} />
               View Projects
@@ -139,11 +139,11 @@ export default function Hero() {
               href="/contact"
               whileHover={{ 
                 scale: 1.05, 
-                backgroundColor: "rgba(59, 130, 246, 0.1)",
-                borderColor: "rgb(37, 99, 235)"
+                backgroundColor: "rgba(8, 47, 73, 0.05)",
+                borderColor: "rgb(8, 47, 73)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold transition-all"
+              className="inline-flex items-center gap-2 border-2 border-blue-950 text-blue-950 px-8 py-4 rounded-full font-semibold transition-all"
             >
               <Palette size={20} />
               Get in Touch
@@ -153,10 +153,10 @@ export default function Hero() {
           {/* Social Icons */}
           <motion.div variants={itemVariants} className="flex gap-4">
             {[
-              { Icon: FaGithub, href: "#", color: "hover:bg-gray-100" },
-              { Icon: FaLinkedin, href: "#", color: "hover:bg-blue-50" },
-              { Icon: FaTwitter, href: "#", color: "hover:bg-sky-50" },
-            ].map(({ Icon, href, color }, index) => (
+              { Icon: FaGithub, href: "#" },
+              { Icon: FaLinkedin, href: "#" },
+              { Icon: FaTwitter, href: "#" },
+            ].map(({ Icon, href }, index) => (
               <motion.a
                 key={index}
                 href={href}
@@ -167,7 +167,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className={`text-gray-600 hover:text-blue-600 transition-all p-3 rounded-full ${color} border-2 border-transparent hover:border-blue-200 shadow-md`}
+                className="text-gray-600 hover:text-blue-950 transition-all p-3 rounded-full hover:bg-blue-50 border-2 border-transparent hover:border-blue-200 shadow-md"
               >
                 <Icon size={24} />
               </motion.a>
@@ -175,7 +175,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE - WITH PLACEHOLDER FIX */}
+        {/* RIGHT IMAGE */}
         <motion.div
           variants={itemVariants}
           className="md:w-1/2 flex justify-center relative"
@@ -213,46 +213,32 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 blur-2xl"
+              className="absolute inset-0 bg-blue-400 rounded-full opacity-20 blur-2xl"
             />
 
-            {/* Profile Image - USING PLACEHOLDER FOR NOW */}
+            {/* Profile Image */}
             <motion.div
               whileHover={{ scale: 1.05, rotateZ: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full h-full overflow-hidden rounded-full border-8 border-blue-500 shadow-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center"
+              className="relative z-10 w-full h-full overflow-hidden rounded-full border-8 border-blue-950 shadow-2xl"
             >
-              {/* TEMPORARY FIX: Use a beautiful placeholder */}
-              <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
-                <div className="text-6xl md:text-7xl font-bold text-blue-600 mb-4">HR</div>
-                <div className="text-lg font-semibold text-blue-700">Hassan Riaz</div>
-                <div className="text-sm text-gray-600 mt-2">UI/UX Designer</div>
-                
-                {/* OPTIONAL: Add decorative elements */}
-                <div className="absolute top-4 left-4 w-16 h-16 bg-blue-200 rounded-full opacity-20"></div>
-                <div className="absolute bottom-4 right-4 w-24 h-24 bg-purple-200 rounded-full opacity-20"></div>
-              </div>
-              
-              {/* COMMENT OUT THE IMAGE FOR NOW - UNCOMMENT WHEN FIXED */}
-              
-              {/* <Image
+              <Image
                 src="/h.jpeg"
                 alt="Hassan Riaz - UI/UX Designer"
                 width={400}
                 height={400}
                 priority
-                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
-              /> */}
-             
+                className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+              />
             </motion.div>
           </motion.div>
 
           {/* Floating Icons with 3D effect */}
           {[
-            { Icon: Code, position: "top-0 left-0", delay: 0, color: "from-blue-500 to-blue-600" },
-            { Icon: Palette, position: "top-0 right-0", delay: 0.5, color: "from-purple-500 to-purple-600" },
-            { Icon: Sparkles, position: "bottom-0 left-0", delay: 1, color: "from-pink-500 to-pink-600" },
-          ].map(({ Icon, position, delay, color }, index) => (
+            { Icon: Code, position: "top-0 left-0", delay: 0 },
+            { Icon: Palette, position: "top-0 right-0", delay: 0.5 },
+            { Icon: Sparkles, position: "bottom-0 left-0", delay: 1 },
+          ].map(({ Icon, position, delay }, index) => (
             <motion.div
               key={index}
               initial={{ scale: 0, rotateZ: -180 }}
@@ -268,7 +254,7 @@ export default function Hero() {
                 ease: "easeInOut",
               }}
               whileHover={{ scale: 1.3, zIndex: 50 }}
-              className={`absolute ${position} bg-gradient-to-br ${color} p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white`}
+              className="absolute bg-blue-950 p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white"
               style={{ 
                 transform: "translateZ(50px)",
                 transformStyle: "preserve-3d",

@@ -10,21 +10,18 @@ export default function FeaturedProjects() {
       title: "UniEvent Platform",
       description: "Campus event management platform with real-time updates, event creation, and RSVP system using Next.js & MongoDB",
       tags: ["Next.js", "MongoDB", "TypeScript", "Real-time"],
-      gradient: "from-blue-500 to-cyan-500",
       image: "🎓",
     },
     {
       title: "Modern Job Board",
       description: "Full-stack job portal featuring role-based authentication, advanced filtering, and application tracking",
       tags: ["React", "Node.js", "PostgreSQL", "Auth"],
-      gradient: "from-purple-500 to-pink-500",
       image: "💼",
     },
     {
       title: "Finance Tracker Pro",
       description: "Comprehensive finance management with interactive charts, budget planning, and expense categorization",
       tags: ["React", "Chart.js", "Firebase", "Analytics"],
-      gradient: "from-green-500 to-emerald-500",
       image: "💰",
     },
   ];
@@ -44,7 +41,7 @@ export default function FeaturedProjects() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 right-20 w-96 h-96 bg-purple-50 rounded-full opacity-50 blur-3xl"
+          className="absolute top-20 right-20 w-96 h-96 bg-blue-50 rounded-full opacity-50 blur-3xl"
         />
       </div>
 
@@ -74,12 +71,12 @@ export default function FeaturedProjects() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl opacity-30 blur-xl"
+              className="absolute inset-0 bg-blue-400 rounded-2xl opacity-30 blur-xl"
             />
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl"
+              className="relative w-20 h-20 bg-blue-950 rounded-2xl flex items-center justify-center shadow-2xl"
             >
               <Briefcase className="text-white" size={40} />
             </motion.div>
@@ -94,7 +91,7 @@ export default function FeaturedProjects() {
           >
             Featured{" "}
             <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -142,7 +139,7 @@ export default function FeaturedProjects() {
               style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
             >
               {/* Project Image/Icon Area */}
-              <div className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
+              <div className="relative h-48 bg-blue-950 flex items-center justify-center overflow-hidden">
                 <motion.div
                   animate={{
                     scale: [1, 1.2, 1],
@@ -177,10 +174,10 @@ export default function FeaturedProjects() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${project.gradient} opacity-10 rounded-full blur-2xl`}
+                  className="absolute top-0 right-0 w-24 h-24 bg-blue-200 opacity-10 rounded-full blur-2xl"
                 />
 
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-950 transition-all">
                   {project.title}
                 </h3>
                 
@@ -198,7 +195,7 @@ export default function FeaturedProjects() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.2 + i * 0.05 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium border border-blue-200"
+                      className="px-3 py-1 bg-blue-50 text-blue-950 rounded-full text-xs font-medium border border-blue-200"
                     >
                       {tag}
                     </motion.span>
@@ -211,7 +208,7 @@ export default function FeaturedProjects() {
                     href="#"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-950 text-white rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transition-all"
                   >
                     <ExternalLink size={16} />
                     Demo
@@ -220,7 +217,7 @@ export default function FeaturedProjects() {
                     href="#"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-xl font-semibold text-sm hover:bg-blue-50 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 border-2 border-blue-950 text-blue-950 rounded-xl font-semibold text-sm hover:bg-blue-50 transition-all"
                   >
                     <Github size={16} />
                     Code
@@ -251,10 +248,10 @@ export default function FeaturedProjects() {
             <motion.button
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
+                boxShadow: "0 20px 40px rgba(8, 47, 73, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all group"
+              className="inline-flex items-center gap-3 bg-blue-950 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all group"
             >
               <span>View All Projects</span>
               <motion.div

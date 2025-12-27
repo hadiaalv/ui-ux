@@ -25,7 +25,7 @@ export default function ProjectCard({ title, description, tags = [], index = 0 }
         initial={{ scale: 0, opacity: 0 }}
         whileHover={{ scale: 1.5, opacity: 0.1 }}
         transition={{ duration: 0.3 }}
-        className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl"
+        className="absolute inset-0 bg-blue-950 rounded-2xl"
       />
 
       <div className="relative z-10">
@@ -33,7 +33,7 @@ export default function ProjectCard({ title, description, tags = [], index = 0 }
         <motion.div
           whileHover={{ rotate: 360, scale: 1.1 }}
           transition={{ duration: 0.5 }}
-          className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg"
+          className="w-14 h-14 bg-blue-950 rounded-xl flex items-center justify-center mb-4 shadow-lg"
         >
           <span className="text-2xl">🎨</span>
         </motion.div>
@@ -50,7 +50,7 @@ export default function ProjectCard({ title, description, tags = [], index = 0 }
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: i * 0.1 }}
-                className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium"
+                className="px-3 py-1 bg-blue-100 text-blue-950 rounded-full text-sm font-medium"
               >
                 {tag}
               </motion.span>
@@ -64,7 +64,7 @@ export default function ProjectCard({ title, description, tags = [], index = 0 }
             href="#"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+            className="flex items-center gap-2 text-blue-950 hover:text-blue-800 font-semibold"
           >
             <ExternalLink size={18} />
             Live Demo
@@ -85,7 +85,7 @@ export default function ProjectCard({ title, description, tags = [], index = 0 }
       <motion.div
         initial={{ scale: 0, rotate: 0 }}
         whileHover={{ scale: 1, rotate: 45 }}
-        className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 opacity-20 rounded-lg"
+        className="absolute -top-8 -right-8 w-24 h-24 bg-blue-200 opacity-20 rounded-lg"
       />
     </motion.div>
   );
