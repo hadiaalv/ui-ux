@@ -1,270 +1,152 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Sparkles, Code, Palette, ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from "react-icons/fa";
+import { Heart, Mail } from "lucide-react";
 
-export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
+export default function Footer() {
+  const socialLinks = [
+    { Icon: FaGithub, href: "#", label: "GitHub" },
+    { Icon: FaLinkedin, href: "#", label: "LinkedIn" },
+    { Icon: FaTwitter, href: "#", label: "Twitter" },
+    { Icon: FaDribbble, href: "#", label: "Dribbble" },
+  ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6 md:px-16 relative overflow-hidden bg-white">
-      {/* Animated Background Elements */}
+    <footer className="bg-blue-950 text-white py-12 px-6 md:px-16 relative overflow-hidden">
+      {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
-            x: [0, 100, 0],
-            y: [0, -50, 0],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full opacity-30 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, -90, 0],
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-purple-100 rounded-full opacity-30 blur-3xl"
+          className="absolute top-0 right-0 w-64 h-64 bg-blue-800 rounded-full opacity-20 blur-3xl"
         />
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col md:flex-row items-center justify-between gap-12 w-full max-w-6xl relative z-10"
-      >
-        {/* LEFT TEXT */}
-        <motion.div variants={itemVariants} className="md:w-1/2 space-y-6">
-          <motion.div
-            initial={{ scale: 0, rotateZ: -180 }}
-            animate={{ scale: 1, rotateZ: 0 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold border-2 border-blue-200 shadow-lg"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles size={16} />
-            </motion.div>
-            UI/UX Designer & Creative Artist
-          </motion.div>
-
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold leading-tight"
-          >
-            Hi, I'm{" "}
-            <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_auto]"
-              animate={{
-                backgroundPosition: ["0%", "100%", "0%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
+          {/* About Section */}
+          <div>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl font-bold mb-4"
             >
               Hassan Riaz
-            </motion.span>
-          </motion.h1>
+            </motion.h3>
+            <p className="text-blue-200 leading-relaxed">
+              UI/UX Designer & Creative Artist with 10+ years of experience in
+              creating beautiful digital experiences.
+            </p>
+          </div>
 
-          <motion.p 
-            variants={itemVariants} 
-            className="text-gray-600 text-lg leading-relaxed"
-          >
-            A seasoned <motion.span
-              className="font-semibold text-blue-600"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
+          {/* Quick Links */}
+          <div>
+            <motion.h4
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xl font-bold mb-4"
             >
-              UI/UX graphic designer
-            </motion.span> with over 10 years of experience.
-            I specialize in creating stunning websites, intuitive icons, and a
-            wide range of graphic elements using Adobe Illustrator, Adobe XD,
-            and Photoshop.
-          </motion.p>
+              Quick Links
+            </motion.h4>
+            <ul className="space-y-2">
+              {[
+                { name: "Home", href: "/" },
+                { name: "Projects", href: "/projects" },
+                { name: "About", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map((link, index) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <a
+                    href={link.href}
+                    className="text-blue-200 hover:text-white transition-colors inline-block hover:translate-x-2 transform duration-200"
+                  >
+                    {link.name}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center">
-            <motion.a
-              href="/projects"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(8, 47, 73, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all group"
+          {/* Contact Info */}
+          <div>
+            <motion.h4
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xl font-bold mb-4"
             >
-              <Code size={20} />
-              View Projects
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight size={20} />
-              </motion.div>
-            </motion.a>
-
-            <motion.a
-              href="/contact"
-              whileHover={{ 
-                scale: 1.05, 
-                backgroundColor: "rgba(8, 47, 73, 0.05)",
-                borderColor: "rgb(8, 47, 73)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 border-2 border-blue-950 text-blue-950 px-8 py-4 rounded-full font-semibold transition-all"
-            >
-              <Palette size={20} />
-              Get in Touch
-            </motion.a>
-          </motion.div>
-
-          {/* Social Icons */}
-          <motion.div variants={itemVariants} className="flex gap-4">
-            {[
-              { Icon: FaGithub, href: "#", color: "hover:bg-gray-100" },
-              { Icon: FaLinkedin, href: "#", color: "hover:bg-blue-50" },
-              { Icon: FaTwitter, href: "#", color: "hover:bg-sky-50" },
-            ].map(({ Icon, href, color }, index) => (
+              Get In Touch
+            </motion.h4>
+            <div className="space-y-3">
               <motion.a
-                key={index}
-                href={href}
-                whileHover={{ 
-                  scale: 1.2, 
-                  rotate: 360,
-                  y: -5
-                }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className={`text-gray-600 hover:text-blue-950 transition-all p-3 rounded-full ${color} border-2 border-transparent hover:border-blue-200 shadow-md`}
+                href="mailto:hassan@example.com"
+                whileHover={{ scale: 1.05, x: 5 }}
+                className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
               >
-                <Icon size={24} />
+                <Mail size={18} />
+                hassan@example.com
               </motion.a>
-            ))}
-          </motion.div>
-        </motion.div>
 
-        {/* RIGHT IMAGE - FIXED VERSION */}
+              {/* Social Links */}
+              <div className="flex gap-3 pt-2">
+                {socialLinks.map(({ Icon, href, label }, index) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    initial={{ scale: 0, rotateZ: -180 }}
+                    whileInView={{ scale: 1, rotateZ: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.2, rotate: 360, y: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 bg-blue-800 rounded-lg flex items-center justify-center hover:bg-white hover:text-blue-950 transition-all"
+                    aria-label={label}
+                  >
+                    <Icon size={18} />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
         <motion.div
-          variants={itemVariants}
-          className="md:w-1/2 flex justify-center relative"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]"
-            style={{ perspective: "1000px" }}
-          >
-            {/* 3D Rotating Ring */}
-            <motion.div
-              animate={{ rotateY: 360 }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-0 rounded-full border-4 border-blue-300 opacity-50"
-              style={{ transformStyle: "preserve-3d" }}
-            />
-
-            {/* Glow Effect */}
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 blur-2xl"
-            />
-
-            {/* Profile Image - NOW USING h.jpeg */}
-            <motion.div
-              whileHover={{ scale: 1.05, rotateZ: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full h-full overflow-hidden rounded-full border-8 border-blue-950 shadow-2xl"
+          <p className="text-blue-200 text-sm flex items-center gap-2">
+            © {new Date().getFullYear()} Hassan Riaz. Made with{" "}
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
             >
-              <Image
-                src="/h.jpeg"
-                alt="Hassan Riaz - UI/UX Designer"
-                width={400}
-                height={400}
-                priority
-                className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
-              />
-            </motion.div>
-          </motion.div>
-
-          {/* Floating Icons with 3D effect */}
-          {[
-            { Icon: Code, position: "top-0 left-0", delay: 0, color: "from-blue-500 to-blue-600" },
-            { Icon: Palette, position: "top-0 right-0", delay: 0.5, color: "from-purple-500 to-purple-600" },
-            { Icon: Sparkles, position: "bottom-0 left-0", delay: 1, color: "from-pink-500 to-pink-600" },
-          ].map(({ Icon, position, delay, color }, index) => (
-            <motion.div
-              key={index}
-              initial={{ scale: 0, rotateZ: -180 }}
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 360],
-                y: [0, -10, 0],
-              }}
-              transition={{
-                delay,
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              whileHover={{ scale: 1.3, zIndex: 50 }}
-              className={`absolute ${position} bg-gradient-to-br ${color} p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white`}
-              style={{ 
-                transform: "translateZ(50px)",
-                transformStyle: "preserve-3d",
-              }}
-            >
-              <Icon className="text-white" size={28} />
-            </motion.div>
-          ))}
+              <Heart size={16} className="text-red-400 fill-red-400" />
+            </motion.span>
+          </p>
+          <p className="text-blue-200 text-sm">
+            All rights reserved.
+          </p>
         </motion.div>
-      </motion.div>
-    </section>
+      </div>
+    </footer>
   );
 }
