@@ -26,7 +26,7 @@ export default function Footer() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-0 right-0 w-64 h-64 bg-blue-800 rounded-full opacity-20 blur-3xl"
+          className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 blur-3xl"
         />
       </div>
 
