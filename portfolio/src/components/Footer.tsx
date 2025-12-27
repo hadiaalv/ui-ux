@@ -134,12 +134,12 @@ export default function Footer() {
           className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-blue-200 text-sm flex items-center gap-2">
-            © {new Date().getFullYear()} Hassan Riaz. Made with{" "}
+            © {new Date().getFullYear()} Hassan Riaz. 
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Heart size={16} className="text-red-400 fill-red-400" />
+              {/* <Heart size={16} className="text-red-400 fill-red-400" /> */}
             </motion.span>
           </p>
           <p className="text-blue-200 text-sm">
