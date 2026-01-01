@@ -14,6 +14,7 @@ export default function FeaturedProjects() {
       tags: [
         "Shopify",
         "Ecommerce",
+        "Responsive Design",
         "Cloudflare",
         "Payment Gateways",
         "HSTS",
@@ -40,6 +41,7 @@ export default function FeaturedProjects() {
         "Shopify",
         "Ecommerce",
         "Facebook Pixel",
+        "Responsive Design",
         "Styled-Components",
         "Payment Gateways",
         "Cloudflare",
