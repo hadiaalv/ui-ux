@@ -97,10 +97,22 @@ export default function ProjectsPage() {
       
     },
     {
-      title: "Task Manager Pro",
-      description: "Collaborative task management with drag-and-drop functionality and team collaboration features",
-      tags: ["React", "DnD", "Redux", "WebSocket"],
-      image: "/project6.jpg",
+      title: "Miss Lola",
+      description: "Engaging Shopify ecommerce website designed with a strong focus on user experience, interactivity, and brand identity. Features smooth animations, personalized shopping experiences, and intuitive product displays. Optimized for performance, accessibility, and fast browsing with responsive layouts. Integrated secure payment options, analytics tracking, marketing automation, and wishlist functionality to enhance customer engagement and drive conversions.",
+      tags: ["UI/UX Design",
+  "Shopify",
+  "Ecommerce Design",
+  "Responsive Design",
+  "Interactive Animations",
+  "Branding",
+  "Conversion Optimization",
+  "Marketing Automation",
+  "Analytics Integration",
+  "Wishlist Functionality",
+  "Accessibility",
+  "Performance Optimization"],
+      image: "/6.png",
+      liveUrl: "https://www.misslola.com/",
       
     },
   ];
