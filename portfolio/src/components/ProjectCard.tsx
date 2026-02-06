@@ -12,6 +12,7 @@ type Props = {
   image?: string;
   year?: string;
   featured?: boolean;
+  liveUrl?: string;
 };
 
 export default function ProjectCard({ 
@@ -21,8 +22,10 @@ export default function ProjectCard({
   index = 0,
   image = "/placeholder-project.jpg",
   year = "2025",
-  featured = false
-}: Props) {
+  featured = false,
+  liveUrl = "#" 
+}: Props)
+ {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -97,15 +100,20 @@ export default function ProjectCard({
         </div>
 
         {/* Live Demo Button */}
-        <motion.a
-          href="#"
-          whileHover={{ scale: 1.02, x: 5 }}
-          whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-2 bg-blue-950 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all"
-        >
-          <ExternalLink size={18} />
-          Live Demo
-        </motion.a>
+        {liveUrl && (
+  <motion.a
+    href={liveUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.02, x: 5 }}
+    whileTap={{ scale: 0.98 }}
+    className="inline-flex items-center gap-2 bg-blue-950 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all"
+  >
+    <ExternalLink size={18} />
+    Live Demo
+  </motion.a>
+)}
+
       </div>
 
       {/* Decorative Corner Element */}
