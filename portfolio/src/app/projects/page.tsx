@@ -60,25 +60,34 @@ export default function ProjectsPage() {
       liveUrl: "https://www.earthwoodproducts.com//",
     },
     {
-      title: "Finance Tracker Pro",
-      description: "Comprehensive finance management with interactive charts, budget planning, and expense categorization",
-      tags: ["React", "Chart.js", "Firebase", "Analytics"],
-      image: "/project4.jpg",
-      year: "2024",
+      title: "City of Games",
+      description: "Sleek and modern Shopify ecommerce website designed to showcase products with a clean, visually appealing layout and seamless user experience. Features smooth interactions, responsive design, and optimized performance for fast browsing. Integrated multiple payment options, A/B testing for conversion improvements, and visual enhancements to strengthen brand presence and drive customer engagement.",
+      tags: ["UI/UX Design",
+  "Shopify",
+  "Ecommerce Design",
+  "Responsive Design",
+  "Branding",
+  "Conversion Optimization",
+  "Payment Integration",
+  "A/B Testing",
+  "Performance Optimization",
+  "Visual Design"],
+      image: "/4.png  ",
+      liveUrl: "https://www.cityofgames.com.au/",
     },
     {
       title: "E-Commerce Store",
       description: "Modern online store with cart, payments, and admin dashboard featuring seamless user experience",
       tags: ["Next.js", "Stripe", "Prisma", "TailwindCSS"],
       image: "/project5.jpg",
-      year: "2023",
+      
     },
     {
       title: "Task Manager Pro",
       description: "Collaborative task management with drag-and-drop functionality and team collaboration features",
       tags: ["React", "DnD", "Redux", "WebSocket"],
       image: "/project6.jpg",
-      year: "2023",
+      
     },
   ];
 
