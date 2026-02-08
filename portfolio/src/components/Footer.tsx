@@ -101,7 +101,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                edencolours3@gmail.com
+                dreamital.web@gmail.com
               </motion.a>
 
               {/* Social Links */}
