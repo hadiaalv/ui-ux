@@ -1,12 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -16,85 +27,110 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-blue-950 shadow-lg"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+          : "bg-white py-5"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link href="/" className="text-2xl font-bold text-white">
-              <motion.span
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="inline-block"
-              >
-                
-              </motion.span>
-              {" "}Hassan.ui/ux
-            </Link>
-          </motion.div>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-[#dce9f8]">
+              <Image
+                src="/Dreamital Logo 1.svg"
+                alt="Dreamital Kogo.ai logo"
+                width={30}
+                height={30}
+                className="h-7 w-auto"
+              />
+            </div>
+            <div className="leading-tight">
+              <span className="block text-base font-bold text-navy tracking-tight">
+              
+              </span>
+              <span className="text-sm font-semibold text-[#2b6cb0]">
+             
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
                 <Link
+                  key={item.name}
                   href={item.href}
-                  className="text-white hover:text-blue-200 transition-colors font-medium relative group"
+                  className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
+                    active
+                      ? "text-navy"
+                      : "text-gray-600 hover:text-navy"
+                  }`}
                 >
                   {item.name}
-                  <motion.span
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"
-                  />
                 </Link>
-              </motion.div>
-            ))}
+              );
+            })}
+            <Link
+              href="/contact"
+              className="ml-4 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-md hover:bg-navy-dark transition-colors group"
+            >
+              Let's Talk
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-navy"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{
-            height: isOpen ? "auto" : 0,
-            opacity: isOpen ? 1 : 0,
-          }}
-          className="md:hidden overflow-hidden"
-        >
-          <div className="py-4 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block text-white hover:text-blue-200 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
       </div>
-    </motion.nav>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden overflow-hidden border-t border-gray-100 bg-white"
+          >
+            <div className="px-6 py-4 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-2 py-3 text-gray-700 font-semibold hover:text-navy transition-colors border-b border-gray-50 last:border-0"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-3 flex items-center justify-center gap-2 bg-navy text-white font-semibold px-5 py-3 rounded-md"
+              >
+                Let's Talk
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }

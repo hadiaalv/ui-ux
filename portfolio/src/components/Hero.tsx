@@ -1,290 +1,121 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaBehance, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Sparkles, Code, Palette, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
+  const highlights = [
+    "12+ years of design experience",
+    "400+ projects delivered",
+    "Figma, Adobe XD & Webflow",
+  ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6 md:px-16 relative overflow-hidden bg-white">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full opacity-30 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, -90, 0],
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100 rounded-full opacity-30 blur-3xl"
-        />
-      </div>
+    <section className="pt-32 md:pt-40 pb-20 px-6 md:px-16 bg-gradient-to-b from-navy to-navy-dark relative overflow-hidden">
+      {/* Subtle grid backdrop */}
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col md:flex-row items-center justify-between gap-12 w-full max-w-6xl relative z-10"
-      >
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center relative z-10">
         {/* LEFT TEXT */}
-        <motion.div variants={itemVariants} className="md:w-1/2 space-y-6">
-          <motion.div
-            initial={{ scale: 0, rotateZ: -180 }}
-            animate={{ scale: 1, rotateZ: 0 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-blue-50 text-blue-950 px-4 py-2 rounded-full text-sm font-semibold border-2 border-blue-200 shadow-lg"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles size={16} />
-            </motion.div>
-            UI/UX Designer & Creative Artist
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="inline-flex items-center gap-2 bg-white/10 text-gold px-4 py-1.5 rounded-full text-sm font-semibold border border-white/10">
+            UI/UX Designer & Ecommerce Web Specialist
+          </span>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold leading-tight"
-          >
-            Hi, I'm{" "}
-            <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 bg-[length:200%_auto]"
-              animate={{
-                backgroundPosition: ["0%", "100%", "0%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              Hassan Riaz
-            </motion.span>
-          </motion.h1>
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white">
+            Design That Converts.{" "}
+            <span className="text-gold">Experiences That Perform.</span>
+          </h1>
 
-          <motion.p 
-            variants={itemVariants} 
-            className="text-gray-600 text-lg leading-relaxed"
-          >
-            A seasoned <motion.span
-              className="font-semibold text-blue-950"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              UI/UX graphic designer
-            </motion.span> with over 10 years of experience.
-            I specialize in creating stunning websites, intuitive icons, and a
-            wide range of graphic elements using Adobe Illustrator, Figma, Adobe XD,
-            and Photoshop.
-          </motion.p>
+          <p className="mt-6 text-blue-100/80 text-lg leading-relaxed max-w-xl">
+            I'm Hassan Riaz, a UI/UX designer with over a decade of experience
+            crafting high-converting ecommerce websites, intuitive product
+            interfaces, and complete brand identities for businesses
+            worldwide.
+          </p>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center">
-            <motion.a
-              href="/projects"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(8, 47, 73, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all group"
-            >
-              <Code size={20} />
-              View Projects
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight size={20} />
-              </motion.div>
-            </motion.a>
-
-            <motion.a
-              href="/contact"
-              whileHover={{ 
-                scale: 1.05, 
-                backgroundColor: "rgba(8, 47, 73, 0.05)",
-                borderColor: "rgb(8, 47, 73)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 border-2 border-blue-950 text-blue-950 px-8 py-4 rounded-full font-semibold transition-all"
-            >
-              <Palette size={20} />
-              Get in Touch
-            </motion.a>
-          </motion.div>
-
-          {/* Social Icons */}
-          <motion.div variants={itemVariants} className="flex gap-4">
-            {[
-              // { Icon: FaGithub, href: "#" },
-              {Icon:FaBehance, href:"https://www.behance.net/iconsstock"},
-              { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/" },
-              // { Icon: FaTwitter, href: "#" },
-            ].map(({ Icon, href }, index) => (
-              <motion.a
-                key={index}
-                href={href}
-                whileHover={{ 
-                  scale: 1.2, 
-                  rotate: 360,
-                  y: -5
-                }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="text-gray-600 hover:text-blue-950 transition-all p-3 rounded-full hover:bg-blue-50 border-2 border-transparent hover:border-blue-200 shadow-md"
-              >
-                <Icon size={24} />
-              </motion.a>
+          <div className="mt-8 space-y-3">
+            {highlights.map((item) => (
+              <div key={item} className="flex items-center gap-3">
+                <CheckCircle2 size={18} className="text-gold flex-shrink-0" />
+                <span className="text-blue-100/90 text-sm md:text-base">
+                  {item}
+                </span>
+              </div>
             ))}
-          </motion.div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-gold text-navy px-7 py-3.5 rounded-md font-bold shadow-lg hover:bg-gold-light transition-colors group"
+            >
+              View My Work
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 border-2 border-white/20 text-white px-7 py-3.5 rounded-md font-bold hover:bg-white/10 transition-colors"
+            >
+              Get a Free Consultation
+            </Link>
+          </div>
         </motion.div>
 
         {/* RIGHT IMAGE */}
         <motion.div
-          variants={itemVariants}
-          className="md:w-1/2 flex justify-center relative"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="relative flex justify-center lg:justify-end"
         >
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="relative w-full max-w-[400px]"
-          >
-            {/* Glow Effect Behind Image */}
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-blue-400 rounded-3xl opacity-20 blur-3xl"
-            />
-
-            {/* Main Image Container */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full shadow-2xl overflow-hidden"
-            >
-              <div className="relative w-full h-[400px] md:h-[500px]">
+          <div className="relative w-full max-w-[380px]">
+            <div className="absolute -inset-4 bg-gold/10 rounded-3xl blur-2xl" />
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5">
+              <div className="relative w-full h-[420px] md:h-[480px]">
                 <Image
                   src="/profile.png"
                   alt="Hassan Riaz - UI/UX Designer"
                   fill
                   priority
-                  className="object-contain hover:scale-105 transition-transform duration-500"
+                  className="object-contain"
                 />
               </div>
-            </motion.div>
+            </div>
 
-            {/* Floating Stats/Badges */}
-            <motion.div
-              initial={{ scale: 0, x: -20 }}
-              animate={{ scale: 1, x: 0 }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="absolute top-10 -left-6 bg-white px-6 py-4 rounded-2xl shadow-2xl border-2 border-blue-100"
-            >
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <p className="text-3xl font-bold text-blue-950">12+</p>
-                <p className="text-sm text-gray-600">Year Experience</p>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ scale: 0, x: 20 }}
-              animate={{ scale: 1, x: 0 }}
-              transition={{ delay: 0.7, type: "spring" }}
-              className="absolute bottom-10 -right-6 bg-white px-6 py-4 rounded-2xl shadow-2xl border-2 border-blue-100"
-            >
-              <motion.div
-                animate={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <p className="text-3xl font-bold text-blue-950">400+</p>
-                <p className="text-sm text-gray-600">Projects Finished</p>
-              </motion.div>
-            </motion.div>
-
-            {/* Floating Icons with 3D effect */}
-            {[
-              { Icon: Code, position: "top-0 left-0", delay: 0 },
-              { Icon: Palette, position: "top-0 right-0", delay: 0.5 },
-              { Icon: Sparkles, position: "bottom-0 left-0", delay: 1 },
-            ].map(({ Icon, position, delay }, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0, rotateZ: -180 }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 360],
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  delay,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                whileHover={{ scale: 1.3, zIndex: 50 }}
-                className={`absolute ${position} bg-blue-950 p-4 rounded-2xl shadow-2xl cursor-pointer border-2 border-white`}
-                style={{ 
-                  transform: "translateZ(50px)",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <Icon className="text-white" size={28} />
-              </motion.div>
-            ))}
-          </motion.div>
+            {/* Stat badges */}
+            <div className="absolute -bottom-6 -left-6 bg-white px-5 py-4 rounded-xl shadow-xl">
+              <p className="text-2xl font-bold text-navy">12+</p>
+              <p className="text-xs text-gray-500 font-medium">
+                Years Experience
+              </p>
+            </div>
+            <div className="absolute -top-6 -right-4 bg-white px-5 py-4 rounded-xl shadow-xl">
+              <p className="text-2xl font-bold text-navy">400+</p>
+              <p className="text-xs text-gray-500 font-medium">
+                Projects Delivered
+              </p>
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

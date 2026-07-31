@@ -1,153 +1,130 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+const projects = [
+  {
+    title: "VYB Energy",
+    description:
+      "Designed a clean, conversion-focused ecommerce experience with clear product hierarchy, intuitive navigation, and an optimized checkout flow.",
+    tags: ["Shopify", "Ecommerce", "Responsive Design"],
+    image: "/vyb.png",
+    year: "2025",
+    liveUrl: "https://vybenergy.com.au/",
+  },
+  {
+    title: "Get Carlo",
+    description:
+      "A professional, approachable website with strong visual hierarchy and consistent branding to encourage lead generation.",
+    tags: ["WordPress", "Custom Theme", "SEO"],
+    image: "/hom2.png",
+    year: "2025",
+    liveUrl: "https://getcarlo.com.au/",
+  },
+  {
+    title: "Tia & Rose",
+    description:
+      "A modern fashion ecommerce interface emphasizing visual storytelling and a frictionless checkout experience.",
+    tags: ["Shopify", "Ecommerce", "Responsive Design"],
+    image: "/story.png",
+    year: "2025",
+    liveUrl: "https://tiaandrose.com/",
+  },
+];
+
 export default function FeaturedProjects() {
-  const projects = [
-    {
-      title: "VYB Energy",
-       description:
-  "Designed a clean, conversion-focused ecommerce experience with clear product hierarchy, intuitive navigation, and optimized checkout flow to improve usability and customer confidence across all devices.",
-      tags: [
-        "Shopify",
-        "Ecommerce",
-        "Responsive Design",
-        "Cloudflare",
-        "Payment Gateways",
-        "HSTS",
-        "Google Fonts",
-      ],
-      image: "/vyb.png",
-      year: "2025",
-      liveUrl: "https://vybenergy.com.au/",
-    },
-    {
-      title: "Get Carlo",
-      description:
-        "Crafted a professional and approachable website with strong visual hierarchy, consistent branding, and intuitive content structure to clearly communicate services and encourage lead generation.",
-      tags: ["WordPress", "PHP", "Custom Theme", "Responsive Design", "SEO"],
-      image: "/hom2.png",
-      year: "2025",
-      liveUrl: "https://getcarlo.com.au/",
-    },
-    {
-      title: "Tia & Rose",
-      description:
-        "Designed a modern fashion ecommerce interface emphasizing visual storytelling, seamless product discovery, and a frictionless checkout experience to enhance engagement and conversions.",
-      tags: [
-        "Shopify",
-        "Ecommerce",
-        "Facebook Pixel",
-        "Responsive Design",
-        "Styled-Components",
-        "Payment Gateways",
-        "Cloudflare",
-      ],
-      image: "/story.png",
-      year: "2025",
-      liveUrl: "https://tiaandrose.com/",
-    },
-  ];
-
   return (
-    <section className="py-32 px-6 md:px-16 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="py-24 px-6 md:px-16 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-6">
-            <div className="w-20 h-20 bg-blue-950 rounded-2xl flex items-center justify-center shadow-2xl">
-              <Briefcase className="text-white" size={40} />
-            </div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="max-w-2xl">
+            <p className="text-gold font-bold text-sm tracking-widest uppercase mb-3">
+              Recent Work
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy">
+              Featured Projects
+            </h2>
           </div>
-
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
-            Featured{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-blue-800">
-              Projects
-            </span>
-          </h2>
-
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Explore some of my recent work showcasing real-world client projects
-          </p>
+          <Link
+            href="/projects"
+            className="hidden md:inline-flex items-center gap-2 text-navy font-bold hover:text-gold transition-colors whitespace-nowrap"
+          >
+            View All Projects
+            <ArrowRight size={18} />
+          </Link>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-8 mb-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-xl border-2 border-blue-100"
+              transition={{ delay: index * 0.08, duration: 0.4 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100"
             >
               {/* Image */}
-              <div className="relative h-64 bg-gray-100">
+              <div className="relative h-56 bg-gray-100">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white px-4 py-1 rounded-full text-sm font-semibold shadow">
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-navy shadow">
                   {project.year}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">
+                <h3 className="text-xl font-bold text-navy mb-2">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, i) => (
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag) => (
                     <span
-                      key={i}
-                      className="px-3 py-1 bg-blue-950 text-white rounded-full text-sm"
+                      key={tag}
+                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Live Demo Button */}
-                {project.liveUrl && (
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 bg-blue-950 text-white px-6 py-3 rounded-xl font-semibold shadow hover:shadow-lg transition"
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </motion.a>
-                )}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors"
+                >
+                  <ExternalLink size={16} />
+                  Visit Live Site
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* View All */}
-        <div className="text-center">
-          <Link href="/projects">
-            <button className="inline-flex items-center gap-3 bg-blue-950 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition">
-              View All Projects
-              <ArrowRight size={22} />
-            </button>
+        {/* Mobile View All */}
+        <div className="text-center md:hidden">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 bg-navy text-white px-6 py-3 rounded-md font-bold"
+          >
+            View All Projects
+            <ArrowRight size={18} />
           </Link>
         </div>
       </div>

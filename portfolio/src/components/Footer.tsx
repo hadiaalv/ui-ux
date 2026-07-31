@@ -1,152 +1,147 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaDribbble, FaBehance } from "react-icons/fa";
-import { Heart, Mail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaLinkedin, FaBehance } from "react-icons/fa";
+import { Mail, Phone, MapPin } from "lucide-react";
+
+const socialLinks = [
+  {
+    Icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/hassan-riaz-21249a210/",
+    label: "LinkedIn",
+  },
+  {
+    Icon: FaBehance,
+    href: "https://www.behance.net/iconsstock",
+    label: "Behance",
+  },
+];
+
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
+
+const services = [
+  "UI/UX Design",
+  "Website Design",
+  "App Design",
+  "Branding & Identity",
+];
 
 export default function Footer() {
-  const socialLinks = [
-    // { Icon: FaGithub, href: "#", label: "GitHub" },
-    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hassan-riaz-21249a210/", label: "LinkedIn" },
-    { Icon: FaBehance, href: "https://www.behance.net/iconsstock", label: "Behance" }
-    // { Icon: FaTwitter, href: "#", label: "Twitter" },
-    // { Icon: FaDribbble, href: "#", label: "Dribbble" },
-  ];
-
   return (
-    <footer className="bg-blue-950 text-white py-12 px-6 md:px-16 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20 blur-3xl"
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-3 gap-12 mb-8">
-          {/* About Section */}
-          <div>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl font-bold mb-4"
-            >
-              Hassan Riaz
-            </motion.h3>
-            <p className="text-blue-200 leading-relaxed">
-              UI/UX Designer & Creative Artist with 10+ years of experience in
-              creating beautiful digital experiences.
+    <footer className="bg-navy-dark text-white pt-16 pb-8 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+          {/* About */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10">
+                <Image
+                  src="/Dreamital Logo 1.svg"
+                  alt="Dreamital Kogo.ai logo"
+                  width={30}
+                  height={30}
+                  className="h-7 w-auto"
+                />
+              </div>
+              <span className="text-lg font-bold">Dreamital Kogo.ai</span>
+            </div>
+            <p className="text-blue-100/60 text-sm leading-relaxed mb-5">
+              A modern brand and digital studio shaping premium online
+              experiences with a bold, cohesive visual identity.
             </p>
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-gold hover:text-navy transition-colors"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <motion.h4
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-xl font-bold mb-4"
-            >
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
               Quick Links
-            </motion.h4>
-            <ul className="space-y-2">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Projects", href: "/projects" },
-                { name: "About", href: "/about" },
-                { name: "Contact", href: "/contact" },
-              ].map((link, index) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <a
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
                     href={link.href}
-                    className="text-blue-200 hover:text-white transition-colors inline-block hover:translate-x-2 transform duration-200"
+                    className="text-blue-100/60 hover:text-gold transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
-                </motion.li>
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Services */}
           <div>
-            <motion.h4
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-xl font-bold mb-4"
-            >
-              Get In Touch
-            </motion.h4>
-            <div className="space-y-3">
-              <motion.a
-                href="mailto:hassan@example.com"
-                whileHover={{ scale: 1.05, x: 5 }}
-                className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
-              >
-                <Mail size={18} />
-                dreamital.web@gmail.com
-              </motion.a>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
+              Services
+            </h4>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service} className="text-blue-100/60 text-sm">
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              {/* Social Links */}
-              <div className="flex gap-3 pt-2">
-                {socialLinks.map(({ Icon, href, label }, index) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    initial={{ scale: 0, rotateZ: -180 }}
-                    whileInView={{ scale: 1, rotateZ: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.2, rotate: 360, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-blue-800 rounded-lg flex items-center justify-center hover:bg-white hover:text-blue-950 transition-all"
-                    aria-label={label}
-                  >
-                    <Icon size={18} />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+          {/* Contact */}
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
+              Get In Touch
+            </h4>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="mailto:edencolours3@gmail.com"
+                  className="flex items-start gap-3 text-blue-100/60 hover:text-gold transition-colors text-sm"
+                >
+                  <Mail size={16} className="mt-0.5 shrink-0" />
+                  edencolours3@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+923057662662"
+                  className="flex items-start gap-3 text-blue-100/60 hover:text-gold transition-colors text-sm"
+                >
+                  <Phone size={16} className="mt-0.5 shrink-0" />
+                  +92 305 7662 662
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-blue-100/60 text-sm">
+                <MapPin size={16} className="mt-0.5 shrink-0" />
+                Faisalabad, Pakistan
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p className="text-blue-200 text-sm flex items-center gap-2">
-            © {new Date().getFullYear()} Hassan Riaz. 
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              {/* <Heart size={16} className="text-red-400 fill-red-400" /> */}
-            </motion.span>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-blue-100/50 text-sm">
+            © {new Date().getFullYear()} Dreamital Kogo.ai. All rights reserved.
           </p>
-          {/* <p className="text-blue-200 text-sm">
-            All rights reserved.
-          </p> */}
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
