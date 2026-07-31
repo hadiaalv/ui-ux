@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-24 pt-32 md:px-16 md:pt-40">
+    <section id="hero" className="relative overflow-hidden bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-24 pt-32 md:px-16 md:pt-40">
       <div
         className="pointer-events-none absolute inset-0 opacity-20"
         style={{

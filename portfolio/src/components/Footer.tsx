@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="mb-12 grid gap-10 md:grid-cols-4">
           {/* About */}
           <div className="md:col-span-1">
-            <div className="mb-4 flex items-center gap-3">
+            <Link href="/#hero" className="mb-4 flex items-center gap-3">
               <Image
                 src="/Dreamital Logo 1.svg"
                 alt="Dreamital Logo.ai logo"
@@ -47,7 +47,7 @@ export default function Footer() {
                 height={64}
                 className="h-14 w-auto md:h-16"
               />
-            </div>
+            </Link>
             <p className="mb-5 text-sm leading-relaxed text-slate-600">
               A modern brand and digital studio shaping premium online
               experiences with a bold, cohesive visual identity.

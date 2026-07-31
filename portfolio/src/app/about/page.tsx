@@ -149,7 +149,7 @@ export default function AboutPage() {
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
               >
                 <div className="w-11 h-11 bg-navy rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="text-gold" size={20} />
+                  <item.icon className="text-white" size={20} />
                 </div>
                 <h4 className="text-lg font-bold text-navy mb-2">
                   {item.title}
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 className="bg-white p-5 rounded-xl shadow-sm text-center border border-gray-100"
               >
                 <div className="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <skill.icon className="text-gold" size={22} />
+                  <skill.icon className="text-white" size={22} />
                 </div>
                 <p className="text-navy text-sm font-bold">{skill.name}</p>
               </div>

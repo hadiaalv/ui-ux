@@ -89,8 +89,8 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="text-center md:hidden">
-          <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg">
+        <div className="text-center">
+          <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg hover:bg-[#2b6cb0] transition-colors">
             View All Projects
             <ArrowRight size={18} />
           </Link>

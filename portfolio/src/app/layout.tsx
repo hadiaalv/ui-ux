@@ -7,6 +7,9 @@ export const metadata = {
   title: "Dreamital Web",
   description:
     "Dreamital Web",
+  icons: {
+    icon: "/Dreamital Logo 1.svg",
+  },
 };
 
 export default function RootLayout({

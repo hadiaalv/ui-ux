@@ -96,7 +96,7 @@ export default function ContactPage() {
                 className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center flex-shrink-0">
-                  <item.icon className="text-gold" size={20} />
+                  <item.icon className="text-white" size={20} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-500 font-medium">
