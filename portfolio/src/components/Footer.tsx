@@ -113,7 +113,7 @@ export default function Footer() {
                   className="flex items-start gap-3 text-sm text-slate-600 transition-colors hover:text-gold"
                 >
                   <Mail size={16} className="mt-0.5 shrink-0" />
-                  edencolours3@gmail.com
+                  dreamital.web@gmail.com
                 </a>
               </li>
               <li>
