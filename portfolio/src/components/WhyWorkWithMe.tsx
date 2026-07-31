@@ -35,7 +35,7 @@ export default function WhyWorkWithMe() {
     <section className="bg-white py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 max-w-2xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Why Work With Me</p>
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Why Work With Us</p>
           <h2 className="mb-4 text-3xl font-bold text-[#143f78] md:text-5xl">A design partner built around momentum</h2>
           <p className="text-lg text-[#4f6382]">A decade of experience across ecommerce, SaaS, and branding — grounded in clarity, quality, and calm execution.</p>
         </div>

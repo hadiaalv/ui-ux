@@ -7,7 +7,7 @@ export default function TrustBar() {
     <section className="bg-[#f4f8fe] px-6 py-10 md:px-16">
       <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#dcecfb] bg-white/90 px-6 py-8 shadow-[0_12px_30px_rgba(20,63,120,0.05)]">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-          Platforms &amp; Tools I Work With
+          Platforms &amp; Tools We Work With
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {platforms.map((name) => (

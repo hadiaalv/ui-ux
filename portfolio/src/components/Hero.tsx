@@ -47,7 +47,7 @@ export default function Hero() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]">
-              I create thoughtful digital experiences with strong brand clarity, elegant interfaces, and a focus on what truly moves people.
+              We create thoughtful digital experiences with strong brand clarity, elegant interfaces, and a focus on what truly moves people.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
