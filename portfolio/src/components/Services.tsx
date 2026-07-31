@@ -70,18 +70,28 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ delay: index * 0.06, duration: 0.4 }}
-              className="group rounded-[1.5rem] border border-[#dce9f8] bg-white/90 p-8 shadow-[0_18px_45px_rgba(20,63,120,0.08)]"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ y: -8, scale: 1.02, rotateX: 2, rotateY: 2 }}
+              transition={{ delay: index * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
+              className="group rounded-[1.5rem] border border-[#dce9f8] bg-white/90 p-8 shadow-[0_18px_45px_rgba(20,63,120,0.08)] transition-all duration-300 hover:shadow-[0_24px_60px_rgba(20,63,120,0.15)]"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#143f78] to-[#2b6cb0] shadow-md">
+              <motion.div 
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6, type: "spring" }}
+                className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#143f78] to-[#2b6cb0] shadow-md"
+              >
                 <service.icon className="text-white" size={26} />
-              </div>
+              </motion.div>
 
-              <h3 className="mb-2 text-xl font-bold text-[#143f78]">{service.title}</h3>
+              <motion.h3 
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+                className="mb-2 text-xl font-bold text-[#143f78]"
+              >
+                {service.title}
+              </motion.h3>
 
               <p className="mb-5 text-sm leading-relaxed text-[#4f6382] md:text-base">
                 {service.description}
@@ -89,21 +99,32 @@ export default function Services() {
 
               <div className="flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-[#eef6ff] px-3 py-1 text-xs font-medium text-[#2b6cb0]">
+                  <motion.span 
+                    key={tag}
+                    whileHover={{ scale: 1.1, backgroundColor: "#2b6cb0", color: "white" }}
+                    transition={{ duration: 0.2 }}
+                    className="rounded-full bg-[#eef6ff] px-3 py-1 text-xs font-medium text-[#2b6cb0] cursor-default"
+                  >
                     {tag}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <Link href="/contact" className="inline-flex items-center gap-2 font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0]">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mt-14 text-center"
+        >
+          <Link href="/contact" className="group inline-flex items-center gap-2 font-bold text-[#143f78] transition-all duration-300 hover:text-[#2b6cb0] hover:gap-3">
             Discuss your project
-            <ArrowRight size={18} />
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -31,57 +31,93 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="rounded-[2.2rem] border border-white/20 bg-white/10 p-8 shadow-[0_24px_70px_rgba(4,18,37,0.24)] backdrop-blur-sm md:p-10 lg:p-12"
         >
           <div className="mx-auto max-w-5xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-4 py-1.5 text-sm font-semibold text-[#dcecfb]">
+            <motion.span 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-4 py-1.5 text-sm font-semibold text-[#dcecfb]"
+            >
               Dreamital Web
-            </span>
+            </motion.span>
 
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mt-6 text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl"
+            >
               Design that feels
               <span className="mt-2 block text-[#9fd0f8]">calm, refined, and unmistakably premium.</span>
-            </h1>
+            </motion.h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]"
+            >
               We create thoughtful digital experiences with strong brand clarity, elegant interfaces, and a focus on what truly moves people.
-            </p>
+            </motion.p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mt-8 flex flex-wrap justify-center gap-4"
+            >
               <Link
                 href="/projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-navy shadow-[0_12px_30px_rgba(10,28,60,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#f4f9ff]"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-navy shadow-[0_12px_30px_rgba(10,28,60,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,28,60,0.3)] hover:bg-[#f4f9ff]"
               >
                 View My Work
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:bg-white/15"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1"
               >
                 Get a Free Consultation
               </Link>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-5xl gap-3 md:grid-cols-3">
-            {cards.map((card) => {
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="mx-auto mt-10 grid max-w-5xl gap-3 md:grid-cols-3"
+          >
+            {cards.map((card, index) => {
               const Icon = card.icon;
               return (
-                <div key={card.title} className="rounded-[1.25rem] border border-white/20 bg-white/95 p-4 text-left shadow-sm">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6ff] text-navy">
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="rounded-[1.25rem] border border-white/20 bg-white/95 p-4 text-left shadow-sm transition-all duration-300 hover:shadow-md"
+                >
+                  <motion.div 
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6ff] text-navy"
+                  >
                     <Icon size={16} />
-                  </div>
+                  </motion.div>
                   <p className="mt-3 font-semibold text-navy">{card.title}</p>
                   <p className="mt-1 text-sm text-slate-600">{card.text}</p>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

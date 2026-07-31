@@ -44,57 +44,89 @@ export default function FeaturedProjects() {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Recent Work</p>
             <h2 className="text-3xl font-bold text-[#143f78] md:text-5xl">Featured Projects</h2>
           </div>
-          <Link href="/projects" className="hidden items-center gap-2 whitespace-nowrap font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0] md:inline-flex">
-            View All Projects
-            <ArrowRight size={18} />
-          </Link>
+          
         </div>
 
         <div className="mb-10 grid gap-8 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ delay: index * 0.08, duration: 0.4 }}
-              className="overflow-hidden rounded-[1.5rem] border border-[#dce9f8] bg-[#f9fcff] shadow-[0_18px_40px_rgba(20,63,120,0.08)]"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ y: -10, scale: 1.02, rotateX: 2, rotateY: 2 }}
+              transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
+              className="group overflow-hidden rounded-[1.5rem] border border-[#dce9f8] bg-[#f9fcff] shadow-[0_18px_40px_rgba(20,63,120,0.08)] transition-all duration-300 hover:shadow-[0_24px_60px_rgba(20,63,120,0.15)]"
             >
-              <div className="relative h-56 bg-[#eef6ff]">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
-                <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#143f78] shadow">
+              <div className="relative h-56 bg-[#eef6ff] overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  className="h-full w-full"
+                >
+                  <Image src={project.image} alt={project.title} fill className="object-cover" />
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                  className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#143f78] shadow"
+                >
                   {project.year}
-                </div>
+                </motion.div>
               </div>
 
               <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-[#143f78]">{project.title}</h3>
+                <motion.h3 
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                  className="mb-2 text-xl font-bold text-[#143f78]"
+                >
+                  {project.title}
+                </motion.h3>
                 <p className="mb-4 text-sm leading-relaxed text-[#4f6382]">{project.description}</p>
 
                 <div className="mb-5 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#2b6cb0]">
+                    <motion.span 
+                      key={tag}
+                      whileHover={{ scale: 1.1, backgroundColor: "#2b6cb0", color: "white" }}
+                      transition={{ duration: 0.2 }}
+                      className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#2b6cb0] cursor-default"
+                    >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
 
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0]">
-                  <ExternalLink size={16} />
+                <motion.a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                  className="group/link inline-flex items-center gap-2 text-sm font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0]"
+                >
+                  <ExternalLink size={16} className="transition-transform duration-300 group-hover/link:translate-x-1" />
                   Visit Live Site
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg hover:bg-[#2b6cb0] transition-colors">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="text-center"
+        >
+          <Link href="/projects" className="group inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#2b6cb0] hover:shadow-xl hover:-translate-y-1">
             View All Projects
-            <ArrowRight size={18} />
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

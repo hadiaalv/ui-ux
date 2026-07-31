@@ -39,60 +39,60 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src="/Dreamital Logo 1.svg"
-              alt="Dreamital Kogo.ai logo"
-              width={56}
-              height={56}
-              className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="leading-tight hidden sm:block">
-              <span className="block text-base font-semibold text-navy tracking-tight">
-               
-              </span>
-              <span className="text-sm font-medium text-gold">
-                
-              </span>
-            </div>
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+            <Link href="/" className="flex items-center gap-3 group">
+              <Image
+                src="/Dreamital Logo 1.svg"
+                alt="Dreamital Kogo.ai logo"
+                width={56}
+                height={56}
+                className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
+          </motion.div>
 
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
               const active = pathname === item.href;
               return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
-                    active
-                      ? "text-navy bg-[#edf5ff]"
-                      : "text-gold hover:text-navy hover:bg-[#f4f9ff]"
-                  }`}
-                >
-                  {item.name}
-                </Link>
+                <motion.div key={item.name} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    href={item.href}
+                    className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+                      active
+                        ? "text-navy bg-[#edf5ff]"
+                        : "text-gold hover:text-navy hover:bg-[#f4f9ff]"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
               );
             })}
-            <Link
-              href="/contact"
-              className="ml-4 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] hover:bg-gold transition-all duration-200 group"
-            >
-              Let&apos;s Talk
-              <ArrowRight
-                size={16}
-                className="group-hover:translate-x-0.5 transition-transform"
-              />
-            </Link>
+            <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ duration: 0.2 }}>
+              <Link
+                href="/contact"
+                className="ml-4 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] hover:bg-gold transition-all duration-200 group"
+              >
+                Let&apos;s Talk
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                />
+              </Link>
+            </motion.div>
           </div>
 
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
             className="md:hidden rounded-full p-2 text-navy"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </div>
       </div>
 

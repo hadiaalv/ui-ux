@@ -44,17 +44,27 @@ export default function WhyWorkWithMe() {
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.4 }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              className="rounded-[1.5rem] border border-[#dce9f8] bg-[#f8fbff] p-7 shadow-[0_16px_35px_rgba(20,63,120,0.06)]"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0 20px 40px rgba(20,63,120,0.12)" }}
+              transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
+              className="rounded-[1.5rem] border border-[#dce9f8] bg-[#f8fbff] p-7 shadow-[0_16px_35px_rgba(20,63,120,0.06)] transition-all duration-300"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#143f78] to-[#2b6cb0]">
+              <motion.div 
+                whileHover={{ rotate: 360, scale: 1.15 }}
+                transition={{ duration: 0.6, type: "spring" }}
+                className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#143f78] to-[#2b6cb0]"
+              >
                 <reason.icon className="text-white" size={24} />
-              </div>
-              <h3 className="mb-2 text-lg font-bold text-[#143f78]">{reason.title}</h3>
+              </motion.div>
+              <motion.h3 
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+                className="mb-2 text-lg font-bold text-[#143f78]"
+              >
+                {reason.title}
+              </motion.h3>
               <p className="text-sm leading-relaxed text-[#4f6382]">{reason.description}</p>
             </motion.div>
           ))}

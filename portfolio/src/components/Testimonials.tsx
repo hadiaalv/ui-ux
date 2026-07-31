@@ -38,24 +38,38 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.4 }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              className="flex flex-col rounded-[1.5rem] border border-[#dce9f8] bg-white p-8 shadow-[0_16px_40px_rgba(20,63,120,0.06)]"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ y: -8, scale: 1.02, rotateX: 2, rotateY: 2 }}
+              transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
+              className="flex flex-col rounded-[1.5rem] border border-[#dce9f8] bg-white p-8 shadow-[0_16px_40px_rgba(20,63,120,0.06)] transition-all duration-300 hover:shadow-[0_24px_50px_rgba(20,63,120,0.12)]"
             >
-              <Quote className="mb-4 text-[#2b6cb0]" size={28} />
+              <motion.div
+                whileHover={{ rotate: 15, scale: 1.1 }}
+                transition={{ duration: 0.3, type: "spring" }}
+              >
+                <Quote className="mb-4 text-[#2b6cb0]" size={28} />
+              </motion.div>
               <div className="mb-4 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#2b6cb0] text-[#2b6cb0]" />
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.3, rotate: 15 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Star size={16} className="fill-[#2b6cb0] text-[#2b6cb0]" />
+                  </motion.div>
                 ))}
               </div>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#4f6382]">“{t.quote}”</p>
-              <div>
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#4f6382]">"{t.quote}"</p>
+              <motion.div 
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 <p className="font-bold text-[#143f78]">{t.name}</p>
                 <p className="text-sm text-[#6b7b91]">{t.role}</p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
