@@ -4,14 +4,17 @@ export default function TrustBar() {
   const platforms = ["Shopify", "BigCommerce", "WordPress", "Figma", "Adobe XD", "Webflow"];
 
   return (
-    <section className="bg-[#f8fbff] py-8 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        <p className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#2b6cb0]">
+    <section className="bg-[#f4f8fe] px-6 py-10 md:px-16">
+      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#dcecfb] bg-white/90 px-6 py-8 shadow-[0_12px_30px_rgba(20,63,120,0.05)]">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-gold">
           Platforms &amp; Tools I Work With
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {platforms.map((name) => (
-            <span key={name} className="text-lg font-semibold tracking-tight text-[#5f7693] transition-colors hover:text-[#143f78] md:text-xl">
+            <span
+              key={name}
+              className="rounded-full border border-[#dcecfb] bg-[#f8fbff] px-4 py-2 text-sm font-semibold tracking-tight text-[#4f6382] shadow-sm transition-colors hover:text-navy md:text-base"
+            >
               {name}
             </span>
           ))}

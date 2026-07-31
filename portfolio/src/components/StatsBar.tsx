@@ -11,21 +11,23 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] py-14 px-6 md:px-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4">
-        {stats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.08, duration: 0.4 }}
-            className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center backdrop-blur-sm"
-          >
-            <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>
-            <p className="mt-1 text-sm text-[#e9f4ff] md:text-base">{stat.label}</p>
-          </motion.div>
-        ))}
+    <section className="bg-[#f4f8fe] px-6 pb-20 md:px-16">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#dcecfb] bg-white p-6 shadow-[0_16px_45px_rgba(20,63,120,0.06)] md:p-8">
+        <div className="grid gap-4 md:grid-cols-4">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.4 }}
+              className="rounded-[1.25rem] border border-[#dcecfb] bg-[#f8fbff] p-5 text-center"
+            >
+              <p className="text-3xl font-bold text-navy md:text-4xl">{stat.value}</p>
+              <p className="mt-1 text-sm text-slate-600 md:text-base">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
