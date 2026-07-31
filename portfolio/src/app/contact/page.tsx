@@ -54,22 +54,22 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 md:pt-40 pb-20 px-6 md:px-16 bg-gradient-to-b from-navy to-navy-dark">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-20 pt-32 md:px-16 md:pt-40">
+        <div className="mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="rounded-[2rem] border border-white/20 bg-white/10 p-8 shadow-[0_20px_60px_rgba(4,18,37,0.25)] backdrop-blur-sm md:p-12"
           >
-            <p className="text-gold font-bold text-sm tracking-widest uppercase mb-3">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#dcecfb]">
               Contact
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Let's Start a Project
+            <h1 className="mb-4 text-3xl font-bold text-white md:text-5xl">
+              Let&apos;s Start a Project
             </h1>
-            <p className="text-blue-100/80 text-lg">
-              Have a project in mind? Let's work together to create something
-              amazing.
+            <p className="text-lg leading-relaxed text-[#e9f4ff]">
+              Have a project in mind? Let&apos;s work together to create something amazing.
             </p>
           </motion.div>
         </div>

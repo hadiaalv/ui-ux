@@ -1,17 +1,18 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Dreamital Logo.ai | Brand & Digital Experience Studio",
+  title: "Dreamital Web",
   description:
-    "Dreamital Logo.ai creates polished digital experiences with a premium, modern brand identity.",
+    "Dreamital Web",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
