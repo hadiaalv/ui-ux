@@ -62,7 +62,7 @@ export default function Services() {
             Services shaped for modern brands
           </h2>
           <p className="text-lg text-[#4f6382]">
-            From strategy to launch, I build polished digital products that are both beautiful and highly effective.
+            From strategy to launch, We build polished digital products that are both beautiful and highly effective.
           </p>
         </div>
 
