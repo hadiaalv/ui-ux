@@ -9,7 +9,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "edencolours3@gmail.com",
+    value: "dreamital.web@gmail.com",
     href: "mailto:edencolours3@gmail.com",
   },
   {
