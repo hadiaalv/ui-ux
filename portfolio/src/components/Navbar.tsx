@@ -48,7 +48,7 @@ export default function Navbar() {
               className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
             />
             <div className="leading-tight hidden sm:block">
-              <span className="block text-base font-semibold text-[#143f78] tracking-tight">
+              <span className="block text-base font-semibold text-navy tracking-tight">
                
               </span>
               <span className="text-sm font-medium text-gold">
@@ -66,8 +66,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                     active
-                      ? "text-[#143f78] bg-[#edf5ff]"
-                      : "text-[#2b6cb0] hover:text-[#143f78] hover:bg-[#f4f9ff]"
+                      ? "text-navy bg-[#edf5ff]"
+                      : "text-gold hover:text-navy hover:bg-[#f4f9ff]"
                   }`}
                 >
                   {item.name}
@@ -76,7 +76,7 @@ export default function Navbar() {
             })}
             <Link
               href="/contact"
-              className="ml-4 inline-flex items-center gap-2 bg-[#143f78] text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] hover:bg-[#2b6cb0] transition-all duration-200 group"
+              className="ml-4 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] hover:bg-gold transition-all duration-200 group"
             >
               Let&apos;s Talk
               <ArrowRight
@@ -87,7 +87,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden rounded-full p-2 text-[#143f78]"
+            className="md:hidden rounded-full p-2 text-navy"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -110,7 +110,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-2 py-3 text-[#2b6cb0] font-semibold hover:text-[#143f78] transition-colors border-b border-[#f3f8ff] last:border-0"
+                  className="block px-2 py-3 text-gold font-semibold hover:text-navy transition-colors border-b border-[#f3f8ff] last:border-0"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -119,7 +119,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 bg-[#143f78] text-white font-semibold px-5 py-3 rounded-full"
+                className="mt-3 flex items-center justify-center gap-2 bg-navy text-white font-semibold px-5 py-3 rounded-full"
               >
                 Let&apos;s Talk
                 <ArrowRight size={16} />

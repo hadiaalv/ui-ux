@@ -55,7 +55,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-[#143f78] shadow-[0_12px_30px_rgba(10,28,60,0.2)] hover:-translate-y-0.5 hover:bg-[#f4f9ff] transition-all duration-200 group"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-navy shadow-[0_12px_30px_rgba(10,28,60,0.2)] hover:-translate-y-0.5 hover:bg-[#f4f9ff] transition-all duration-200 group"
             >
               View My Work
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -77,7 +77,7 @@ export default function Hero() {
           className="relative flex justify-center lg:justify-end"
         >
           <div className="relative w-full max-w-95">
-            <div className="absolute -inset-4 rounded-[2rem] bg-white/20 blur-2xl" />
+            <div className="absolute -inset-4 rounded-4xl bg-white/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/10 shadow-[0_20px_60px_rgba(4,18,37,0.25)] backdrop-blur-sm">
               <div className="relative h-105 w-full md:h-120">
                 {/* <Image
@@ -91,11 +91,11 @@ export default function Hero() {
             </div>
 
             <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white px-5 py-4 shadow-xl">
-              <p className="text-2xl font-bold text-[#143f78]">12+</p>
+              <p className="text-2xl font-bold text-navy">12+</p>
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#6b7b91]">Years Experience</p>
             </div>
             <div className="absolute -top-6 -right-4 rounded-2xl bg-white px-5 py-4 shadow-xl">
-              <p className="text-2xl font-bold text-[#143f78]">400+</p>
+              <p className="text-2xl font-bold text-navy">400+</p>
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#6b7b91]">Projects Delivered</p>
             </div>
           </div>

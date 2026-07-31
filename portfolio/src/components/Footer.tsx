@@ -34,9 +34,9 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-dark text-white pt-16 pb-8 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-white px-6 pb-8 pt-16 text-navy md:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 grid gap-10 md:grid-cols-4">
           {/* About */}
           <div className="md:col-span-1">
             <div className="mb-4 flex items-center gap-3">
@@ -47,9 +47,8 @@ export default function Footer() {
                 height={64}
                 className="h-14 w-auto md:h-16"
               />
-              <span className="text-lg font-bold"></span>
             </div>
-            <p className="text-blue-100/60 text-sm leading-relaxed mb-5">
+            <p className="mb-5 text-sm leading-relaxed text-slate-600">
               A modern brand and digital studio shaping premium online
               experiences with a bold, cohesive visual identity.
             </p>
@@ -61,7 +60,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-gold hover:text-navy transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f4f8fe] text-navy transition-colors hover:bg-gold hover:text-white"
                 >
                   <Icon size={18} />
                 </a>
@@ -71,7 +70,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-slate-700">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -79,7 +78,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-blue-100/60 hover:text-gold transition-colors text-sm"
+                    className="text-sm text-slate-600 transition-colors hover:text-gold"
                   >
                     {link.name}
                   </Link>
@@ -90,12 +89,12 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-slate-700">
               Services
             </h4>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service} className="text-blue-100/60 text-sm">
+                <li key={service} className="text-sm text-slate-600">
                   {service}
                 </li>
               ))}
@@ -104,14 +103,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white/80 mb-5">
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-slate-700">
               Get In Touch
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
                   href="mailto:edencolours3@gmail.com"
-                  className="flex items-start gap-3 text-blue-100/60 hover:text-gold transition-colors text-sm"
+                  className="flex items-start gap-3 text-sm text-slate-600 transition-colors hover:text-gold"
                 >
                   <Mail size={16} className="mt-0.5 shrink-0" />
                   edencolours3@gmail.com
@@ -120,13 +119,13 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+923057662662"
-                  className="flex items-start gap-3 text-blue-100/60 hover:text-gold transition-colors text-sm"
+                  className="flex items-start gap-3 text-sm text-slate-600 transition-colors hover:text-gold"
                 >
                   <Phone size={16} className="mt-0.5 shrink-0" />
                   +92 305 7662 662
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-blue-100/60 text-sm">
+              <li className="flex items-start gap-3 text-sm text-slate-600">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 Faisalabad, Pakistan
               </li>
@@ -135,9 +134,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-blue-100/50 text-sm">
-            © {new Date().getFullYear()}  All rights reserved.
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 md:flex-row">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
       </div>
