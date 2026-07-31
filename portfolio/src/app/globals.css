@@ -12,10 +12,23 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply bg-[#f8fbff] text-[#143f78];
+  @apply bg-[#f6faff] text-[#143f78];
   overflow-x: hidden;
   font-feature-settings: "kern" 1;
+}
+
+::selection {
+  background: #dcecfb;
+  color: #0d2b4f;
+}
+
+a {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 /* Custom Scrollbar */

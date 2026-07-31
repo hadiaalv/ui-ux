@@ -11,8 +11,8 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="bg-navy py-14 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] py-14 px-6 md:px-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
@@ -20,14 +20,10 @@ export default function StatsBar() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08, duration: 0.4 }}
-            className="text-center"
+            className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center backdrop-blur-sm"
           >
-            <p className="text-3xl md:text-4xl font-bold text-gold">
-              {stat.value}
-            </p>
-            <p className="text-blue-100/70 text-sm md:text-base mt-1">
-              {stat.label}
-            </p>
+            <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>
+            <p className="mt-1 text-sm text-[#e9f4ff] md:text-base">{stat.label}</p>
           </motion.div>
         ))}
       </div>

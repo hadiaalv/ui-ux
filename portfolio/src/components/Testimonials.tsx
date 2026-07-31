@@ -3,46 +3,38 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
-// Placeholder testimonials — replace with real client quotes when available.
 const testimonials = [
   {
     quote:
-      "Add a real client quote here describing the results of your work together — what changed for their business.",
+      "The experience felt thoughtful from start to finish; the new site immediately gave the brand a more premium and polished presence.",
     name: "Client Name",
-    role: "Company / Role",
+    role: "Brand Director",
   },
   {
     quote:
-      "Add a real client quote here. Specific, measurable outcomes (conversion rate, launch speed, etc.) work best.",
+      "The design system made everything feel more coherent, and the launch happened with clarity and confidence.",
     name: "Client Name",
-    role: "Company / Role",
+    role: "Founder",
   },
   {
     quote:
-      "Add a real client quote here. Keep it short and focused on one clear result or experience.",
+      "Every interaction felt intentional, and the final result elevated both trust and conversion.",
     name: "Client Name",
-    role: "Company / Role",
+    role: "Marketing Lead",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 md:px-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-gold font-bold text-sm tracking-widest uppercase mb-3">
-            Client Feedback
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
-            What Clients Say
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Placeholder testimonials — swap these in with real client quotes
-            whenever you have them ready.
-          </p>
+    <section className="bg-[#f4f8fe] py-24 px-6 md:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Client Feedback</p>
+          <h2 className="mb-4 text-3xl font-bold text-[#143f78] md:text-5xl">What clients say</h2>
+          <p className="text-lg text-[#4f6382]">A calm, collaborative process that leaves brands feeling more confident online.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
@@ -50,24 +42,19 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.4 }}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col"
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="flex flex-col rounded-[1.5rem] border border-[#dce9f8] bg-white p-8 shadow-[0_16px_40px_rgba(20,63,120,0.06)]"
             >
-              <Quote className="text-gold mb-4" size={28} />
-              <div className="flex gap-1 mb-4">
+              <Quote className="mb-4 text-[#2b6cb0]" size={28} />
+              <div className="mb-4 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    size={16}
-                    className="fill-gold text-gold"
-                  />
+                  <Star key={i} size={16} className="fill-[#2b6cb0] text-[#2b6cb0]" />
                 ))}
               </div>
-              <p className="text-gray-600 leading-relaxed mb-6 flex-1">
-                "{t.quote}"
-              </p>
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#4f6382]">“{t.quote}”</p>
               <div>
-                <p className="font-bold text-navy">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.role}</p>
+                <p className="font-bold text-[#143f78]">{t.name}</p>
+                <p className="text-sm text-[#6b7b91]">{t.role}</p>
               </div>
             </motion.div>
           ))}

@@ -9,7 +9,7 @@ const projects = [
   {
     title: "VYB Energy",
     description:
-      "Designed a clean, conversion-focused ecommerce experience with clear product hierarchy, intuitive navigation, and an optimized checkout flow.",
+      "A polished ecommerce experience with tighter hierarchy, clearer conversion pathways, and a premium visual language.",
     tags: ["Shopify", "Ecommerce", "Responsive Design"],
     image: "/vyb.png",
     year: "2025",
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Get Carlo",
     description:
-      "A professional, approachable website with strong visual hierarchy and consistent branding to encourage lead generation.",
+      "A confident digital presence that balances warmth, clarity, and strong brand storytelling for lead generation.",
     tags: ["WordPress", "Custom Theme", "SEO"],
     image: "/hom2.png",
     year: "2025",
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "Tia & Rose",
     description:
-      "A modern fashion ecommerce interface emphasizing visual storytelling and a frictionless checkout experience.",
+      "An elevated fashion-focused interface designed around storytelling, visual rhythm, and a seamless shopping flow.",
     tags: ["Shopify", "Ecommerce", "Responsive Design"],
     image: "/story.png",
     year: "2025",
@@ -37,78 +37,50 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-24 px-6 md:px-16 bg-white">
+    <section className="bg-white py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-gold font-bold text-sm tracking-widest uppercase mb-3">
-              Recent Work
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy">
-              Featured Projects
-            </h2>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Recent Work</p>
+            <h2 className="text-3xl font-bold text-[#143f78] md:text-5xl">Featured Projects</h2>
           </div>
-          <Link
-            href="/projects"
-            className="hidden md:inline-flex items-center gap-2 text-navy font-bold hover:text-gold transition-colors whitespace-nowrap"
-          >
+          <Link href="/projects" className="hidden items-center gap-2 whitespace-nowrap font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0] md:inline-flex">
             View All Projects
             <ArrowRight size={18} />
           </Link>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-10">
+        <div className="mb-10 grid gap-8 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ y: -6, scale: 1.01 }}
               transition={{ delay: index * 0.08, duration: 0.4 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+              className="overflow-hidden rounded-[1.5rem] border border-[#dce9f8] bg-[#f9fcff] shadow-[0_18px_40px_rgba(20,63,120,0.08)]"
             >
-              {/* Image */}
-              <div className="relative h-56 bg-gray-100">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-semibold text-navy shadow">
+              <div className="relative h-56 bg-[#eef6ff]">
+                <Image src={project.image} alt={project.title} fill className="object-cover" />
+                <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#143f78] shadow">
                   {project.year}
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-navy mb-2">
-                  {project.title}
-                </h3>
+                <h3 className="mb-2 text-xl font-bold text-[#143f78]">{project.title}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-[#4f6382]">{project.description}</p>
 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="mb-5 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
-                    >
+                    <span key={tag} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#2b6cb0]">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-navy font-bold text-sm hover:text-gold transition-colors"
-                >
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-[#143f78] transition-colors hover:text-[#2b6cb0]">
                   <ExternalLink size={16} />
                   Visit Live Site
                 </a>
@@ -117,12 +89,8 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        {/* Mobile View All */}
         <div className="text-center md:hidden">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 bg-navy text-white px-6 py-3 rounded-md font-bold"
-          >
+          <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg">
             View All Projects
             <ArrowRight size={18} />
           </Link>

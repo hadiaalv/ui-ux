@@ -39,17 +39,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* About */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10">
-                <Image
-                  src="/Dreamital Logo 1.svg"
-                  alt="Dreamital Kogo.ai logo"
-                  width={30}
-                  height={30}
-                  className="h-7 w-auto"
-                />
-              </div>
-              <span className="text-lg font-bold">Dreamital Kogo.ai</span>
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src="/Dreamital Logo 1.svg"
+                alt="Dreamital Logo.ai logo"
+                width={64}
+                height={64}
+                className="h-14 w-auto md:h-16"
+              />
+              <span className="text-lg font-bold"></span>
             </div>
             <p className="text-blue-100/60 text-sm leading-relaxed mb-5">
               A modern brand and digital studio shaping premium online
@@ -139,7 +137,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-blue-100/50 text-sm">
-            © {new Date().getFullYear()} Dreamital Kogo.ai. All rights reserved.
+            © {new Date().getFullYear()}  All rights reserved.
           </p>
         </div>
       </div>
