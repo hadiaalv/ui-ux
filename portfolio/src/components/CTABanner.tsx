@@ -11,7 +11,7 @@ export default function CTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
-      className="bg-[linear-gradient(135deg,#0d2b4f_0%,#143f78_100%)] py-16 px-6 md:px-16"
+      className="bg-[linear-gradient(135deg,#143f78_0%,#1d6fd3_100%)] py-16 px-6 md:px-16"
     >
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
         <motion.div
@@ -29,7 +29,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <Link href="/contact" className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-7 py-3.5 font-bold text-navy shadow-[0_12px_24px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#f4f9ff] hover:shadow-[0_16px_32px_rgba(0,0,0,0.3)]">
+          <Link href="/contact" className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-7 py-3.5 font-bold text-navy shadow-[0_12px_24px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#f5faff] hover:shadow-[0_16px_32px_rgba(0,0,0,0.3)]">
             Get a Free Consultation
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

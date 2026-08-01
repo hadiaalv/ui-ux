@@ -37,7 +37,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="bg-white py-24 px-6 md:px-16">
+    <section className="bg-[#f5faff] py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
               viewport={{ once: true, margin: "-100px" }}
               whileHover={{ y: -10, scale: 1.02, rotateX: 2, rotateY: 2 }}
               transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              className="group overflow-hidden rounded-[1.5rem] border border-[#dce9f8] bg-[#f9fcff] shadow-[0_18px_40px_rgba(20,63,120,0.08)] transition-all duration-300 hover:shadow-[0_24px_60px_rgba(20,63,120,0.15)]"
+              className="group overflow-hidden rounded-[1.5rem] border border-[#dceffd] bg-white shadow-[0_18px_40px_rgba(20,63,120,0.08)] transition-all duration-300 hover:shadow-[0_24px_60px_rgba(20,63,120,0.15)]"
             >
               <div className="relative h-56 bg-[#eef6ff] overflow-hidden">
                 <motion.div
@@ -70,7 +70,7 @@ export default function FeaturedProjects() {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
-                  className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#143f78] shadow"
+                  className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#143f78] shadow"
                 >
                   {project.year}
                 </motion.div>
@@ -122,7 +122,7 @@ export default function FeaturedProjects() {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="text-center"
         >
-          <Link href="/projects" className="group inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#2b6cb0] hover:shadow-xl hover:-translate-y-1">
+          <Link href="/projects" className="group inline-flex items-center gap-2 rounded-full bg-[#143f78] px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#1d6fd3] hover:shadow-xl hover:-translate-y-1">
             View All Projects
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

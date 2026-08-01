@@ -4,8 +4,8 @@
   --color-navy: #143f78;
   --color-navy-dark: #0d2b4f;
   --color-navy-light: #1f5fb3;
-  --color-gold: #2b6cb0;
-  --color-gold-light: #6fa8dc;
+  --color-gold: #1d6fd3;
+  --color-gold-light: #dceffd;
 }
 
 * {
@@ -17,13 +17,13 @@ html {
 }
 
 body {
-  @apply bg-[#f6faff] text-[#143f78];
+  @apply bg-[#f5faff] text-[#143f78];
   overflow-x: hidden;
   font-feature-settings: "kern" 1;
 }
 
 ::selection {
-  background: #dcecfb;
+  background: #dceffd;
   color: #0d2b4f;
 }
 
@@ -64,7 +64,7 @@ a {
 
 /* Animated Gradient Background */
 .animated-gradient {
-  background: linear-gradient(135deg, #143f78 0%, #2b6cb0 100%);
+  background: linear-gradient(135deg, #143f78 0%, #1d6fd3 100%);
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
 }
@@ -199,8 +199,8 @@ a {
   background: linear-gradient(
     90deg,
     #143f78,
-    #2b6cb0,
-    #6fa8dc,
+    #1d6fd3,
+    #6fb9ff,
     #143f78
   );
   background-size: 300% 300%;

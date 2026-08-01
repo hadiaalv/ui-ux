@@ -26,7 +26,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#f4f8fe] py-24 px-6 md:px-16">
+    <section className="bg-[#f4faff] py-24 px-6 md:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Client Feedback</p>
@@ -43,7 +43,7 @@ export default function Testimonials() {
               viewport={{ once: true, margin: "-100px" }}
               whileHover={{ y: -8, scale: 1.02, rotateX: 2, rotateY: 2 }}
               transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              className="flex flex-col rounded-[1.5rem] border border-[#dce9f8] bg-white p-8 shadow-[0_16px_40px_rgba(20,63,120,0.06)] transition-all duration-300 hover:shadow-[0_24px_50px_rgba(20,63,120,0.12)]"
+              className="flex flex-col rounded-[1.5rem] border border-[#dceffd] bg-white p-8 shadow-[0_16px_40px_rgba(20,63,120,0.06)] transition-all duration-300 hover:shadow-[0_24px_50px_rgba(20,63,120,0.12)]"
             >
               <motion.div
                 whileHover={{ rotate: 15, scale: 1.1 }}

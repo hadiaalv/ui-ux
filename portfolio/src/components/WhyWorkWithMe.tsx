@@ -32,7 +32,7 @@ const reasons = [
 
 export default function WhyWorkWithMe() {
   return (
-    <section className="bg-white py-24 px-6 md:px-16">
+    <section className="bg-[#f5faff] py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 max-w-2xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#2b6cb0]">Why Work With Us</p>
@@ -49,7 +49,7 @@ export default function WhyWorkWithMe() {
               viewport={{ once: true, margin: "-100px" }}
               whileHover={{ y: -10, scale: 1.03, boxShadow: "0 20px 40px rgba(20,63,120,0.12)" }}
               transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              className="rounded-[1.5rem] border border-[#dce9f8] bg-[#f8fbff] p-7 shadow-[0_16px_35px_rgba(20,63,120,0.06)] transition-all duration-300"
+              className="rounded-[1.5rem] border border-[#dceffd] bg-white p-7 shadow-[0_16px_35px_rgba(20,63,120,0.06)] transition-all duration-300"
             >
               <motion.div 
                 whileHover={{ rotate: 360, scale: 1.15 }}

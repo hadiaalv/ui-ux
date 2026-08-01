@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-24 pt-32 md:px-16 md:pt-40">
+    <section id="hero" className="relative overflow-hidden bg-[#143f78] px-6 pb-24 pt-32 md:px-16 md:pt-40">
       <div
         className="pointer-events-none absolute inset-0 opacity-20"
         style={{
@@ -73,7 +73,7 @@ export default function Hero() {
             >
               <Link
                 href="/projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-navy shadow-[0_12px_30px_rgba(10,28,60,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,28,60,0.3)] hover:bg-[#f4f9ff]"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-navy shadow-[0_12px_30px_rgba(10,28,60,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(10,28,60,0.3)] hover:bg-[#f5faff]"
               >
                 View My Work
                 <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="rounded-[1.25rem] border border-white/20 bg-white/95 p-4 text-left shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="rounded-[1.25rem] border border-white/20 bg-white/98 p-4 text-left shadow-[0_16px_30px_rgba(2,14,34,0.14)] transition-all duration-300 hover:shadow-[0_20px_40px_rgba(2,14,34,0.2)]"
                 >
                   <motion.div 
                     whileHover={{ rotate: 360, scale: 1.1 }}

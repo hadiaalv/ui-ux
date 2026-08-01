@@ -4,8 +4,8 @@ export default function TrustBar() {
   const platforms = ["Shopify", "BigCommerce", "WordPress", "Figma", "Adobe XD", "Webflow"];
 
   return (
-    <section className="bg-[#f4f8fe] px-6 py-10 md:px-16">
-      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#dcecfb] bg-white/90 px-6 py-8 shadow-[0_12px_30px_rgba(20,63,120,0.05)]">
+    <section className="bg-[#f4faff] px-6 py-10 md:px-16">
+      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#dceffd] bg-white/95 px-6 py-8 shadow-[0_12px_30px_rgba(20,63,120,0.05)]">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-gold">
           Platforms &amp; Tools We Work With
         </p>
@@ -13,7 +13,7 @@ export default function TrustBar() {
           {platforms.map((name) => (
             <span
               key={name}
-              className="rounded-full border border-[#dcecfb] bg-[#f8fbff] px-4 py-2 text-sm font-semibold tracking-tight text-[#4f6382] shadow-sm transition-colors hover:text-navy md:text-base"
+              className="rounded-full border border-[#dceffd] bg-[#f5faff] px-4 py-2 text-sm font-semibold tracking-tight text-[#4f6382] shadow-sm transition-colors hover:text-navy md:text-base"
             >
               {name}
             </span>

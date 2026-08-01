@@ -33,8 +33,8 @@ export default function Navbar() {
       transition={{ duration: 0.35 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgba(20,63,120,0.08)] py-3"
-          : "bg-white/80 backdrop-blur-sm py-5"
+          ? "bg-[#f7fbff]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(20,63,120,0.12)] py-3"
+          : "bg-[#f7fbff]/90 backdrop-blur-sm py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16">
@@ -44,9 +44,9 @@ export default function Navbar() {
               <Image
                 src="/Dreamital Logo 1.svg"
                 alt="Dreamital Kogo.ai logo"
-                width={56}
-                height={56}
-                className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
+                width={74}
+                height={74}
+                className="h-12 w-auto sm:h-14 md:h-16 transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
           </motion.div>

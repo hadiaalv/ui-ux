@@ -35,7 +35,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-6 pb-8 pt-16 text-navy md:px-16">
+    <footer className="bg-[#eef7ff] px-6 pb-8 pt-16 text-navy md:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 grid gap-10 md:grid-cols-4">
           {/* About */}
@@ -68,7 +68,7 @@ export default function Footer() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5, scale: 1.1, rotate: 10, backgroundColor: "#2b6cb0", color: "white" }}
                   transition={{ delay: index * 0.1, duration: 0.3, type: "spring" }}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f4f8fe] text-navy transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-navy shadow-sm transition-colors"
                 >
                   <Icon size={18} />
                 </motion.a>
@@ -164,7 +164,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-[#d8eafc] pt-6 md:flex-row">
           <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} All rights reserved.
           </p>
