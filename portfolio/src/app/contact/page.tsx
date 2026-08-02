@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FaLinkedin, FaBehance } from "react-icons/fa";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Schema from "@/components/Schema";
 
 const contactInfo = [
@@ -40,6 +41,8 @@ const socialLinks = [
   },
 ];
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -47,9 +50,32 @@ export default function ContactPage() {
     message: "",
   });
 
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<Status>("idle");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+
+    if (!formRef.current) return;
+
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(() => {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        formRef.current?.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setStatus("error");
+      });
   };
 
   return (
@@ -64,7 +90,7 @@ export default function ContactPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="rounded-[2rem] border border-white/20 bg-white/10 p-8 shadow-[0_20px_60px_rgba(4,18,37,0.25)] backdrop-blur-sm md:p-12"
           >
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -72,7 +98,7 @@ export default function ContactPage() {
             >
               Contact
             </motion.p>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -80,7 +106,7 @@ export default function ContactPage() {
             >
               Let&apos;s Start a Project
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -117,7 +143,7 @@ export default function ContactPage() {
                 transition={{ delay: index * 0.1, duration: 0.4, type: "spring" }}
                 className="group flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm transition-all duration-300"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6, type: "spring" }}
                   className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center flex-shrink-0"
@@ -128,7 +154,7 @@ export default function ContactPage() {
                   <p className="text-xs text-gray-500 font-medium">
                     {item.label}
                   </p>
-                  <motion.p 
+                  <motion.p
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                     className="text-navy font-semibold break-words"
@@ -139,7 +165,7 @@ export default function ContactPage() {
               </motion.a>
             ))}
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -179,12 +205,13 @@ export default function ContactPage() {
             transition={{ duration: 0.6, type: "spring" }}
           >
             <motion.form
+              ref={formRef}
               onSubmit={handleSubmit}
               whileHover={{ boxShadow: "0 16px 40px rgba(20,63,120,0.1)" }}
               transition={{ duration: 0.3 }}
               className="space-y-5 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
             >
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -197,6 +224,7 @@ export default function ContactPage() {
                   whileFocus={{ scale: 1.01, borderColor: "#2b6cb0" }}
                   transition={{ duration: 0.2 }}
                   id="name"
+                  name="name"
                   type="text"
                   value={formData.name}
                   onChange={(e) =>
@@ -209,7 +237,7 @@ export default function ContactPage() {
                 />
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -222,6 +250,7 @@ export default function ContactPage() {
                   whileFocus={{ scale: 1.01, borderColor: "#2b6cb0" }}
                   transition={{ duration: 0.2 }}
                   id="email"
+                  name="email"
                   type="email"
                   inputMode="email"
                   value={formData.email}
@@ -235,7 +264,7 @@ export default function ContactPage() {
                 />
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -248,6 +277,7 @@ export default function ContactPage() {
                   whileFocus={{ scale: 1.01, borderColor: "#2b6cb0" }}
                   transition={{ duration: 0.2 }}
                   id="message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -264,11 +294,33 @@ export default function ContactPage() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
                 type="submit"
-                className="group w-full bg-navy text-white font-bold py-3.5 px-8 rounded-lg hover:bg-navy-dark transition-colors flex items-center justify-center gap-2 text-sm"
+                disabled={status === "sending"}
+                className="group w-full bg-navy text-white font-bold py-3.5 px-8 rounded-lg hover:bg-navy-dark transition-colors flex items-center justify-center gap-2 text-sm disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                {status === "sending" ? "Sending..." : "Send Message"}
+                {status !== "sending" && (
+                  <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                )}
               </motion.button>
+
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-sm font-medium text-green-600"
+                >
+                  <CheckCircle size={16} /> Message sent successfully!
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-sm font-medium text-red-600"
+                >
+                  <AlertCircle size={16} /> Something went wrong. Please try again.
+                </motion.p>
+              )}
             </motion.form>
           </motion.div>
         </div>
