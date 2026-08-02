@@ -18,9 +18,8 @@ import CTABanner from "@/components/CTABanner";
 const profile = {
   name: "Hassan Riaz",
   title: "UI/UX Designer & Creative Artist",
-  bio: "As a skilled Graphic Designer with a focus on UI/UX, I blend creativity and user-centric design principles to craft visually captivating and intuitively functional digital experiences. My expertise lies in creating aesthetically pleasing user interfaces that seamlessly connect with users, while also considering the practicality and usability that lie at the heart of exceptional user experiences.",
-  philosophy:
-    "I believe in the power of good design to solve real-world problems and create meaningful connections between businesses and their users. Every project is an opportunity to push creative boundaries while maintaining practical usability.",
+  bio: " Every great brand begins with a dream. At Dreamital Web, that dream was simple yet powerful: to blend creativity with technology and help businesses shine in the digital world.What started as a passion for design soon grew into a full‑scale digital studio, where imagination meets innovation. Guided by our mantra — Design. Develop. Dream. — we’ve built a space where ideas transform into experiences, and visions become reality.We believe every project tells a story. Whether it’s a website that connects with customers, a UI/UX design that makes interactions effortless, or a graphic identity that captures attention — our mission is to craft solutions that inspire, engage, and endure.Over the years, we’ve mastered platforms like Shopify, WordPress, BigCommerce, Magento, and Volusion, ensuring businesses of all sizes can thrive online. But our work doesn’t stop at websites — we also empower brands with SEO strategies, data solutions, and AI automation to stay ahead in a fast‑moving digital era.For us, success isn’t just about delivering a project — it’s about building trust, creating impact, and helping our clients dream bigger. Dreamital Web is more than a company; it’s a journey of turning imagination into innovation, and innovation into growth.",  philosophy:
+    "At Dreamital Web, creativity meets technology. Guided by our vision — Design. Develop. Dream. — we specialize in crafting digital solutions that empower businesses to grow and stand out.Our expertise spans across:Graphic design services — clean, modern, and impactful visuals.UI/UX design — user‑focused interfaces that elevate experiences.Website design & development — tailored solutions for Shopify, WordPress, BigCommerce, Magento, Volusion, and more.SEO optimization — strategies that drive visibility and results.Data entry & AI automation — efficient, smart workflows for modern businesses.We don’t just build websites — we craft digital identities. Whether you’re launching a brand, scaling an online store, or optimizing your presence, Dreamital Web is your trusted partner in turning vision into reality.",
 };
 
 const skills = [
@@ -151,7 +150,7 @@ export default function AboutPage() {
               transition={{ duration: 0.3 }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold mb-4 text-navy">Who I Am</h3>
+              <h3 className="text-2xl font-bold mb-4 text-navy">Our Story</h3>
               <p className="text-gray-600 leading-relaxed">{profile.bio}</p>
             </motion.div>
 
@@ -161,7 +160,7 @@ export default function AboutPage() {
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold mb-4 text-navy">
-                My Philosophy
+                About Our Services
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {profile.philosophy}
