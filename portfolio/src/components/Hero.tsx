@@ -56,14 +56,18 @@ export default function Hero() {
               
             </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]"
-            >
-              We transform ideas into powerful digital experiences. From stunning graphic design and intuitive UI/UX to full‑scale website development, we deliver solutions that inspire, engage, and perform across every platform.
-            </motion.p>
+            <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.6 }}
+  className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]"
+>
+  We transform ideas into powerful digital experiences. From stunning{" "}
+  <span className="font-bold">graphic design</span> and intuitive{" "}
+  <span className="font-bold">UI/UX</span> to full-scale{" "}
+  <span className="font-bold">website development</span>, we deliver
+  solutions that inspire, engage, and perform across every platform.
+</motion.p>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
