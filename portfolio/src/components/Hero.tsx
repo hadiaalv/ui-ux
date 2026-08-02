@@ -52,8 +52,8 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mt-6 text-4xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl"
             >
-              Design that feels
-              <span className="mt-2 block text-[#9fd0f8]">calm, refined, and unmistakably premium.</span>
+              DESIGN. DEVELOP. DREAM.
+              
             </motion.h1>
 
             <motion.p 
@@ -62,7 +62,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#e9f4ff]"
             >
-              We create thoughtful digital experiences with strong brand clarity, elegant interfaces, and a focus on what truly moves people.
+              We transform ideas into powerful digital experiences. From stunning graphic design and intuitive UI/UX to full‑scale website development, we deliver solutions that inspire, engage, and perform across every platform.
             </motion.p>
 
             <motion.div 
