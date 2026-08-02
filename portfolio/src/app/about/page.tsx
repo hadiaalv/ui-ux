@@ -16,7 +16,7 @@ import {
 import CTABanner from "@/components/CTABanner";
 
 const profile = {
-  name: "Hassan Riaz",
+  name: "About Us",
   title: "UI/UX Designer & Creative Artist",
   bio: " Every great brand begins with a dream. At Dreamital Web, that dream was simple yet powerful: to blend creativity with technology and help businesses shine in the digital world.What started as a passion for design soon grew into a full‑scale digital studio, where imagination meets innovation. Guided by our mantra Design. Develop. Dream. we’ve built a space where ideas transform into experiences, and visions become reality.We believe every project tells a story. Whether it’s a website that connects with customers, a UI/UX design that makes interactions effortless, or a graphic identity that captures attention our mission is to craft solutions that inspire, engage, and endure.Over the years, we’ve mastered platforms like Shopify, WordPress, BigCommerce, Magento, and Volusion, ensuring businesses of all sizes can thrive online. But our work doesn’t stop at websites we also empower brands with SEO strategies, data solutions, and AI automation to stay ahead in a fast‑moving digital era.For us, success isn’t just about delivering a project it’s about building trust, creating impact, and helping our clients dream bigger. Dreamital Web is more than a company; it’s a journey of turning imagination into innovation, and innovation into growth.", 
    philosophy:
@@ -80,7 +80,7 @@ export default function AboutPage() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#dcecfb]"
             >
-              About Me
+            
             </motion.p>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
