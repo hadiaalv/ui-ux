@@ -62,7 +62,7 @@ export default function Testimonials() {
                   </motion.div>
                 ))}
               </div>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#4f6382]">"{t.quote}"</p>
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#4f6382]">&quot;{t.quote}&quot;</p>
               <motion.div 
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}

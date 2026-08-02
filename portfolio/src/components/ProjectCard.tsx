@@ -35,8 +35,10 @@ export default function ProjectCard({
       <div className="relative h-56 md:h-64 overflow-hidden bg-gray-100">
         <Image
           src={image}
-          alt={title}
+          alt={`Preview of ${title}`}
           fill
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
         {featured && (

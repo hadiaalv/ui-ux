@@ -44,9 +44,11 @@ export default function Footer() {
               <Link href="/#hero" className="mb-4 flex items-center gap-3">
                 <Image
                   src="/Dreamital Logo 1.svg"
-                  alt="Dreamital Logo.ai logo"
+                  alt="Dreamital Web logo"
                   width={64}
                   height={64}
+                  loading="lazy"
+                  sizes="64px"
                   className="h-14 w-auto md:h-16"
                 />
               </Link>

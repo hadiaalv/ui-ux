@@ -21,7 +21,7 @@ export default function CTABanner() {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <h2 className="mb-2 text-2xl font-bold text-white md:text-3xl">Have a project in mind?</h2>
-          <p className="text-[#dcecfb]">Let's talk about how thoughtful design can move your business forward with clarity and confidence.</p>
+          <p className="text-[#dcecfb]">Let&apos;s talk about how thoughtful design can move your business forward with clarity and confidence.</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}

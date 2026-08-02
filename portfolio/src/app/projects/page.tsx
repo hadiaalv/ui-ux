@@ -3,6 +3,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import CTABanner from "@/components/CTABanner";
 import { motion } from "framer-motion";
+import Schema from "@/components/Schema";
 
 const projects = [
   {
@@ -135,6 +136,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <>
+      <Schema path="/projects" />
       {/* Header */}
       <section className="bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-20 pt-32 md:px-16 md:pt-40">
         <div className="mx-auto max-w-3xl text-center">

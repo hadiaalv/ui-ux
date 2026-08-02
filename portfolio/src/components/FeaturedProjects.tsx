@@ -64,7 +64,7 @@ export default function FeaturedProjects() {
                   transition={{ duration: 0.4 }}
                   className="h-full w-full"
                 >
-                  <Image src={project.image} alt={project.title} fill className="object-cover" />
+                  <Image src={project.image} alt={`Preview of ${project.title}`} fill loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
                 </motion.div>
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}

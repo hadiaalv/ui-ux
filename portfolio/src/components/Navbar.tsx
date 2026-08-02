@@ -43,9 +43,11 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src="/Dreamital Logo 1.svg"
-                alt="Dreamital Kogo.ai logo"
+                alt="Dreamital Web logo"
                 width={74}
                 height={74}
+                priority
+                sizes="(max-width: 768px) 48px, 64px"
                 className="h-12 w-auto sm:h-14 md:h-16 transition-transform duration-300 group-hover:scale-105"
               />
             </Link>

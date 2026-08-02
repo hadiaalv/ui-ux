@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { FaLinkedin, FaBehance } from "react-icons/fa";
-import { useState } from "react";
-import Schema from "@/components/Schema";
+import { useState, type FormEvent } from "react";
 
 const contactInfo = [
   {
@@ -40,21 +39,20 @@ const socialLinks = [
   },
 ];
 
-export default function ContactPage() {
+export default function ContactPageContent() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(formData);
   };
 
   return (
     <>
-      <Schema path="/contact" />
       {/* Header */}
       <section className="bg-[linear-gradient(135deg,#143f78_0%,#2b6cb0_100%)] px-6 pb-20 pt-32 md:px-16 md:pt-40">
         <div className="mx-auto max-w-3xl text-center">
@@ -267,7 +265,7 @@ export default function ContactPage() {
                 className="group w-full bg-navy text-white font-bold py-3.5 px-8 rounded-lg hover:bg-navy-dark transition-colors flex items-center justify-center gap-2 text-sm"
               >
                 Send Message
-                <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <Send size={16} className="transition-transform group-hover:translate-x-1" />
               </motion.button>
             </motion.form>
           </motion.div>

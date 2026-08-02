@@ -2,15 +2,16 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { ReactNode } from "react";
+import { constructMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = constructMetadata({
   title: "Dreamital Web",
   description:
-    "Dreamital Web",
-  icons: {
-    icon: "/Dreamital Logo 1.svg",
+    "Dreamital Web creates premium UI/UX design systems, digital experiences, and polished brand-led websites for modern businesses.",
+  alternates: {
+    canonical: "/",
   },
-};
+});
 
 export default function RootLayout({
   children,
