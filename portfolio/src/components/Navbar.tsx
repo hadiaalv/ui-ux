@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex justify-between items-center">
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-           <Link href="/" className="flex items-center gap-3 group -ml-15">
+           <Link href="/" className="flex items-center gap-3 group ">
   <Image
     src="/Dreamital Logo 1.svg"
     alt="Dreamital Web logo"
