@@ -136,8 +136,8 @@ export default function AboutPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-24 px-6 md:px-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+      <section className="py-16 px-6 md:px-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -175,7 +175,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-fit"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-fit justify-items-center"
           >
             {expertise.map((item, index) => (
               <motion.div
@@ -204,6 +204,19 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, scale: 1.01, boxShadow: "0 20px 45px rgba(20,63,120,0.08)" }}
+              transition={{ delay: 0.3, duration: 0.4, type: "spring" }}
+              className="sm:col-span-2 bg-[#eef7ff] p-8 rounded-2xl border border-gray-100 shadow-sm"
+            >
+              <h4 className="text-lg font-bold text-navy mb-3">Ready to bring this vision to life?</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                We can also tie your design system to AI automation workflows, seamless brand activation, and launch-ready digital experiences that keep every part of your business moving forward.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
 

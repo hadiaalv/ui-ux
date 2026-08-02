@@ -31,6 +31,7 @@ const services = [
   "Website Design",
   "App Design",
   "Branding & Identity",
+  "AI Automation",
 ];
 
 export default function Footer() {

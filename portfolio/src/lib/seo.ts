@@ -159,7 +159,7 @@ export function buildServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "UI/UX Design and Digital Experience Design",
+    serviceType: "UI/UX Design, Digital Experience Design, and AI Automation",
     provider: siteConfig.name,
     areaServed: "Pakistan",
     availableChannel: {
