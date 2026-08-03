@@ -158,7 +158,7 @@ export default function AboutPage() {
 
       {/* Main content */}
       <section className="py-16 px-6 md:px-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-7xl mx-auto grid gap-8 items-start lg:grid-cols-[1.1fr_0.9fr]">
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -220,7 +220,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-fit justify-items-center"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2"
           >
             {expertise.map((item, index) => (
               <motion.div
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02, boxShadow: "0 16px 40px rgba(20,63,120,0.12)" }}
                 transition={{ delay: index * 0.1, duration: 0.4, type: "spring" }}
-                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
+                className="h-full min-h-[180px] w-full bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
               >
                 <motion.div 
                   whileHover={{ rotate: 360, scale: 1.1 }}
