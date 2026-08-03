@@ -214,48 +214,53 @@ export default function AboutPage() {
             </motion.div>
           </motion.div>
 
-          {/* Expertise Cards */}
+          {/* Expertise Cards + CTA */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+            className="space-y-6"
           >
-            {expertise.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02, boxShadow: "0 16px 40px rgba(20,63,120,0.12)" }}
-                transition={{ delay: index * 0.1, duration: 0.4, type: "spring" }}
-                className="h-full min-h-[180px] w-full bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
-              >
-                <motion.div 
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.6, type: "spring" }}
-                  className="w-11 h-11 bg-navy rounded-lg flex items-center justify-center mb-4"
+            {/* Row 1: top-aligns with "Our Story" */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {expertise.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.02, boxShadow: "0 16px 40px rgba(20,63,120,0.12)" }}
+                  transition={{ delay: index * 0.1, duration: 0.4, type: "spring" }}
+                  className="h-full min-h-[180px] w-full bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300"
                 >
-                  <item.icon className="text-white" size={20} />
+                  <motion.div 
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6, type: "spring" }}
+                    className="w-11 h-11 bg-navy rounded-lg flex items-center justify-center mb-4"
+                  >
+                    <item.icon className="text-white" size={20} />
+                  </motion.div>
+                  <motion.h4 
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-lg font-bold text-navy mb-2"
+                  >
+                    {item.title}
+                  </motion.h4>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
                 </motion.div>
-                <motion.h4 
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                  className="text-lg font-bold text-navy mb-2"
-                >
-                  {item.title}
-                </motion.h4>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+
+            {/* Row 2: top-aligns with "About Our Services" */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, scale: 1.01, boxShadow: "0 20px 45px rgba(20,63,120,0.08)" }}
               transition={{ delay: 0.3, duration: 0.4, type: "spring" }}
-              className="sm:col-span-2 bg-[#eef7ff] p-8 rounded-2xl border border-gray-100 shadow-sm"
+              className="bg-[#eef7ff] p-8 rounded-2xl border border-gray-100 shadow-sm lg:mt-33"
             >
               <h4 className="text-lg font-bold text-navy mb-3">Ready to bring this vision to life?</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
