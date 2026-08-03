@@ -18,10 +18,31 @@ import CTABanner from "@/components/CTABanner";
 const profile = {
   name: "About Us",
   title: "UI/UX Designer & Creative Artist",
-  bio: " Every great brand begins with a dream. At Dreamital Web, that dream was simple yet powerful: to blend creativity with technology and help businesses shine in the digital world.What started as a passion for design soon grew into a full‑scale digital studio, where imagination meets innovation. Guided by our mantra Design. Develop. Dream. we’ve built a space where ideas transform into experiences, and visions become reality.We believe every project tells a story. Whether it’s a website that connects with customers, a UI/UX design that makes interactions effortless, or a graphic identity that captures attention our mission is to craft solutions that inspire, engage, and endure.Over the years, we’ve mastered platforms like Shopify, WordPress, BigCommerce, Magento, and Volusion, ensuring businesses of all sizes can thrive online. But our work doesn’t stop at websites we also empower brands with SEO strategies, data solutions, and AI automation to stay ahead in a fast‑moving digital era.For us, success isn’t just about delivering a project it’s about building trust, creating impact, and helping our clients dream bigger. Dreamital Web is more than a company; it’s a journey of turning imagination into innovation, and innovation into growth.", 
-   philosophy:
-    "At Dreamital Web, creativity meets technology. Guided by our vision Design. Develop. Dream.we specialize in crafting digital solutions that empower businesses to grow and stand out.Our expertise spans across : Graphic design services clean, modern, and impactful visuals.UI/UX design user‑focused interfaces that elevate experiences.Website design & development tailored solutions for Shopify, WordPress, BigCommerce, Magento, Volusion, and more.SEO optimization strategies that drive visibility and results.Data entry & AI automationefficient, smart workflows for modern businesses.We don’t just build websites we craft digital identities. Whether you’re launching a brand, scaling an online store, or optimizing your presence, Dreamital Web is your trusted partner in turning vision into reality.",
+  bio: " Every great brand begins with a dream. At Dreamital Web, that dream was simple yet powerful: to blend creativity with technology and help businesses shine in the digital world.What started as a passion for design soon grew into a full‑scale digital studio, where imagination meets innovation. Guided by our mantra Design. Develop. Dream. we’ve built a space where ideas transform into experiences, and visions become reality.We believe every project tells a story. Whether it’s a website that connects with customers, a UI/UX design that makes interactions effortless, or a graphic identity that captures attention our mission is to craft solutions that inspire, engage, and endure.Over the years, we’ve mastered platforms like Shopify, WordPress, BigCommerce, Magento, and Volusion, ensuring businesses of all sizes can thrive online. But our work doesn’t stop at websites we also empower brands with SEO strategies, data solutions, and AI automation to stay ahead in a fast‑moving digital era.For us, success isn’t just about delivering a project it’s about building trust, creating impact, and helping our clients dream bigger. Dreamital Web is more than a company; it’s a journey of turning imagination into innovation, and innovation into growth.",
 };
+
+const services = [
+  {
+    label: "Graphic design services",
+    text: "clean, modern, and impactful visuals.",
+  },
+  {
+    label: "UI/UX design",
+    text: "user‑focused interfaces that elevate experiences.",
+  },
+  {
+    label: "Website design & development",
+    text: "tailored solutions for Shopify, WordPress, BigCommerce, Magento, Volusion, and more.",
+  },
+  {
+    label: "SEO optimization",
+    text: "strategies that drive visibility and results.",
+  },
+  {
+    label: "Data entry & AI automation",
+    text: "efficient, smart workflows for modern businesses.",
+  },
+];
 
 const skills = [
   { name: "UI/UX Design", icon: Palette },
@@ -163,9 +184,33 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold mb-4 text-navy">
                 About Our Services
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {profile.philosophy}
-              </p>
+
+              <div className="text-gray-600 leading-relaxed space-y-4">
+                <p>
+                  At <span className="font-bold text-navy">Dreamital Web</span>,
+                  creativity meets technology. Guided by our vision — Design.
+                  Develop. Dream — we specialize in crafting digital solutions
+                  that empower businesses to grow and stand out.
+                </p>
+
+                <p>Our expertise spans across:</p>
+
+                {services.map((service) => (
+                  <p key={service.label}>
+                    <span className="font-bold text-navy">
+                      {service.label}
+                    </span>{" "}
+                    — {service.text}
+                  </p>
+                ))}
+
+                <p>
+                  We don&apos;t just build websites — we craft digital
+                  identities. Whether you&apos;re launching a brand, scaling
+                  an online store, or optimizing your presence, Dreamital Web
+                  is your trusted partner in turning vision into reality.
+                </p>
+              </div>
             </motion.div>
           </motion.div>
 
