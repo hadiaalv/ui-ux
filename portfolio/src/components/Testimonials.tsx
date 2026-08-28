@@ -50,7 +50,7 @@ export default function Testimonials() {
   const cards = [...testimonials, ...testimonials];
 
   return (
-    <section className="overflow-hidden bg-[#fbfaf7] py-20 md:py-24" aria-labelledby="testimonials-heading">
+    <section className="testimonial-section overflow-hidden py-20 md:py-24" aria-labelledby="testimonials-heading">
       <div className="mx-auto mb-12 max-w-7xl px-6 text-center md:mb-16 md:px-16">
         <motion.h2
           id="testimonials-heading"
@@ -58,7 +58,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold tracking-[0.08em] text-[#143f78] md:text-5xl"
+          className="testimonial-heading text-3xl font-bold tracking-[0.08em] md:text-5xl"
         >
           WHAT PEOPLE ARE SAYING
         </motion.h2>
@@ -70,24 +70,24 @@ export default function Testimonials() {
             <article
               key={`${testimonial.name}-${index}`}
               aria-hidden={index >= testimonials.length}
-              className="mr-5 flex w-[min(78vw,300px)] shrink-0 flex-col rounded-2xl border border-[#e8e2d8] bg-white p-6 shadow-[0_12px_30px_rgba(57,52,43,0.08)] sm:w-[min(42vw,320px)] lg:w-[min(21vw,316px)]"
+              className="testimonial-card mr-5 flex w-[min(78vw,300px)] shrink-0 flex-col rounded-2xl p-6 sm:w-[min(42vw,320px)] lg:w-[min(21vw,316px)]"
             >
               <div className="mb-5 flex gap-1 text-[#e2ad39]" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, starIndex) => (
                   <Star key={starIndex} size={16} className="fill-current" aria-hidden="true" />
                 ))}
               </div>
-              <p className="mb-7 min-h-[88px] flex-1 text-[15px] leading-7 text-[#4f6382]">&quot;{testimonial.quote}&quot;</p>
-              <div className="flex items-center gap-3 border-t border-[#eee9e1] pt-5">
+              <p className="testimonial-copy mb-7 min-h-[88px] flex-1 text-[15px] leading-7">&quot;{testimonial.quote}&quot;</p>
+              <div className="testimonial-meta flex items-center gap-3 border-t pt-5">
                 <span
-                  className="flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold text-[#143f78]"
+                  className="testimonial-avatar flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold"
                   style={{ backgroundColor: testimonial.color }}
                 >
                   {testimonial.initials}
                 </span>
                 <div>
-                  <p className="font-bold text-[#143f78]">{testimonial.name}</p>
-                  <p className="text-xs text-[#6b7b91]">{testimonial.city}</p>
+                  <p className="testimonial-name font-bold">{testimonial.name}</p>
+                  <p className="testimonial-city text-xs">{testimonial.city}</p>
                   <p className="mt-1 flex items-center gap-1 text-[10px] font-bold tracking-[0.12em] text-[#4c8a66]">
                     <Check size={12} strokeWidth={3} aria-hidden="true" /> VERIFIED BUYER
                   </p>

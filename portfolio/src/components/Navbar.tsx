@@ -143,7 +143,7 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/contact"
-                className="ml-4 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] hover:bg-gold transition-all duration-200 group"
+                className="nav-cta ml-4 inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_12px_24px_rgba(20,63,120,0.18)] transition-all duration-200 group"
               >
                 Let&apos;s Talk
                 <ArrowRight
@@ -227,7 +227,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 bg-navy text-white font-semibold px-5 py-3 rounded-full"
+                className="nav-cta mt-3 flex items-center justify-center gap-2 font-semibold px-5 py-3 rounded-full"
               >
                 Let&apos;s Talk
                 <ArrowRight size={16} />
