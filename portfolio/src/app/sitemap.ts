@@ -1,5 +1,20 @@
 import type { MetadataRoute } from "next";
 
+const serviceSlugs = [
+  "ui-ux-design",
+  "web-design",
+  "graphic-design",
+  "branding-and-identity",
+  "website-development",
+  "e-commerce-development",
+  "shopify-development",
+  "wordpress-development",
+  "digital-marketing",
+  "seo",
+  "social-media-marketing",
+  "content-creation",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dreamitalweb.com";
 
@@ -28,5 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...serviceSlugs.map((slug) => ({
+      url: `${baseUrl}/services/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }

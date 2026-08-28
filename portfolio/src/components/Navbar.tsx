@@ -47,7 +47,7 @@ export default function Navbar() {
       initial={{ y: -8, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.35 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`site-chrome-light fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#f7fbff]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(20,63,120,0.12)] py-3"
           : "bg-[#f7fbff]/90 backdrop-blur-sm py-5"
@@ -78,8 +78,8 @@ export default function Navbar() {
                     href={item.href}
                     className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                       active
-                        ? "text-navy bg-[#edf5ff]"
-                        : "text-gold hover:text-navy hover:bg-[#f4f9ff]"
+                        ? "nav-link-light nav-link-active"
+                        : "nav-link-light"
                     }`}
                   >
                     {item.name}
@@ -99,11 +99,7 @@ export default function Navbar() {
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
                 onClick={() => setIsServicesOpen((open) => !open)}
-                className={`inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
-                  pathname.startsWith("/services") || isServicesOpen
-                    ? "bg-[#edf5ff] text-navy"
-                    : "text-gold hover:bg-[#f4f9ff] hover:text-navy"
-                }`}
+                className={`nav-link-light inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${pathname.startsWith("/services") || isServicesOpen ? "nav-link-active" : ""}`}
               >
                 Services
                 <ChevronDown size={14} className={`transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
@@ -115,22 +111,22 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute right-0 top-full mt-3 w-[min(680px,calc(100vw-3rem))] rounded-2xl border border-[#dceffd] bg-white p-7 shadow-[0_20px_50px_rgba(20,63,120,0.14)]"
+                    className="nav-dropdown absolute right-0 top-full mt-3 w-[min(680px,calc(100vw-3rem))] rounded-2xl border border-[#dceffd] bg-white p-7 shadow-[0_20px_50px_rgba(20,63,120,0.14)]"
                   >
                     <div className="mb-6 flex items-center justify-between border-b border-[#edf3fa] pb-4">
-                      <p className="text-xs font-bold uppercase tracking-[0.24em] text-navy">Services</p>
+                      <p className="nav-dropdown-title text-xs font-bold uppercase tracking-[0.24em]">Services</p>
                       <span className="text-xs text-slate-400">Design. Develop. Dream.</span>
                     </div>
                     <div className="grid gap-7 sm:grid-cols-3">
                       {serviceGroups.map((group) => (
                         <div key={group.title}>
-                          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">{group.title}</p>
+                          <p className="nav-dropdown-category mb-3 text-[11px] font-bold uppercase tracking-[0.2em]">{group.title}</p>
                           <div className="space-y-1">
                             {group.links.map((service) => (
                               <Link
                                 key={service}
                                 href={`/services/${slugify(service)}`}
-                                className="block rounded-lg px-2 py-2 text-sm text-slate-600 transition-all duration-200 hover:bg-[#f4f9ff] hover:pl-3 hover:text-navy"
+                                className="nav-dropdown-link block rounded-lg px-2 py-2 text-sm transition-all duration-200"
                                 onClick={() => setIsServicesOpen(false)}
                               >
                                 {service}
@@ -185,7 +181,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-2 py-3 text-gold font-semibold hover:text-navy transition-colors border-b border-[#f3f8ff] last:border-0"
+                  className="nav-mobile-link block px-2 py-3 font-semibold transition-colors border-b border-[#f3f8ff] last:border-0"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -196,7 +192,7 @@ export default function Navbar() {
                   type="button"
                   aria-expanded={isServicesOpen}
                   onClick={() => setIsServicesOpen((open) => !open)}
-                  className="flex w-full items-center justify-between px-2 py-3 text-left font-semibold text-gold transition-colors hover:text-navy"
+                  className="nav-mobile-link flex w-full items-center justify-between px-2 py-3 text-left font-semibold transition-colors"
                 >
                   Services
                   <ChevronDown size={16} className={`transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
@@ -211,13 +207,13 @@ export default function Navbar() {
                     >
                       {serviceGroups.map((group) => (
                         <div key={group.title} className="mb-4 last:mb-0">
-                          <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">{group.title}</p>
+                          <p className="nav-dropdown-category mb-1 text-[10px] font-bold uppercase tracking-[0.2em]">{group.title}</p>
                           {group.links.map((service) => (
                             <Link
                               key={service}
                               href={`/services/${slugify(service)}`}
                               onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}
-                              className="block rounded-md px-2 py-2 text-sm text-slate-600 transition-colors hover:bg-[#f4f9ff] hover:text-navy"
+                              className="nav-dropdown-link block rounded-md px-2 py-2 text-sm transition-colors"
                             >
                               {service}
                             </Link>

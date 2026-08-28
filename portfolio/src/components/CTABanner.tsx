@@ -11,7 +11,7 @@ export default function CTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
-      className="bg-[linear-gradient(135deg,#143f78_0%,#1d6fd3_100%)] py-16 px-6 md:px-16"
+      className="relative overflow-hidden bg-[linear-gradient(135deg,#143f78_0%,#1d6fd3_100%)] py-20 px-6 md:px-16"
     >
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
         <motion.div
@@ -20,7 +20,7 @@ export default function CTABanner() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <h2 className="mb-2 text-2xl font-bold text-white md:text-3xl">Have a project in mind?</h2>
+          <h2 className="mb-2 text-3xl font-bold text-white md:text-4xl">Have a project in mind?</h2>
           <p className="text-[#dcecfb]">Let&apos;s talk about how thoughtful design can move your business forward with clarity and confidence.</p>
         </motion.div>
         <motion.div

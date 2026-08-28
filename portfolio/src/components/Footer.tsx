@@ -36,7 +36,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#eef7ff] px-6 pb-8 pt-16 text-navy md:px-16">
+    <footer className="site-chrome-light bg-[#eef7ff] px-6 pb-8 pt-16 text-navy md:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 grid gap-10 md:grid-cols-4">
           {/* About */}

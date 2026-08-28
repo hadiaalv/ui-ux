@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #143f78;
-  --color-navy-dark: #0d2b4f;
-  --color-navy-light: #1f5fb3;
-  --color-gold: #1d6fd3;
-  --color-gold-light: #dceffd;
+  --color-navy: #e9f2ff;
+  --color-navy-dark: #07101d;
+  --color-navy-light: #75b7ff;
+  --color-gold: #78baff;
+  --color-gold-light: #cce5ff;
 }
 
 * {
@@ -17,9 +17,130 @@ html {
 }
 
 body {
-  @apply bg-[#f5faff] text-[#143f78];
+  @apply bg-[#080d15] text-[#edf5ff];
   overflow-x: hidden;
   font-feature-settings: "kern" 1;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.22;
+  background-image: linear-gradient(rgba(120, 186, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 186, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Keep the existing component structure while giving every route one dark visual language. */
+body [class*="bg-[#f5faff]"],
+body [class*="bg-[#f4faff]"],
+body [class*="bg-gray-50"],
+body [class*="bg-white"] {
+  background-color: #0d1522 !important;
+}
+
+.site-chrome-light,
+.site-chrome-light [class*="bg-white"] {
+  background-color: #f7fbff !important;
+}
+
+footer.site-chrome-light {
+  background-color: #eef7ff !important;
+}
+
+.site-chrome-light .nav-link-light {
+  color: #143f78 !important;
+  background-color: transparent !important;
+}
+
+.site-chrome-light .nav-link-light:hover,
+.site-chrome-light .nav-link-active {
+  color: #ffffff !important;
+  background-color: #143f78 !important;
+}
+
+.site-chrome-light .nav-dropdown {
+  background-color: #f7fbff !important;
+  border-color: #dceffd !important;
+}
+
+.site-chrome-light .nav-dropdown-title {
+  color: #143f78 !important;
+}
+
+.site-chrome-light .nav-dropdown-category {
+  color: #2b6cb0 !important;
+}
+
+.site-chrome-light .nav-dropdown-link {
+  color: #143f78 !important;
+}
+
+.site-chrome-light .nav-dropdown-link:hover {
+  color: #143f78 !important;
+  background-color: #eaf3ff !important;
+}
+
+.site-chrome-light .nav-mobile-link {
+  color: #143f78 !important;
+}
+
+.site-chrome-light [class*="text-navy"],
+.site-chrome-light [class*="text-[#143f78]"],
+.site-chrome-light [class*="text-slate-700"],
+.site-chrome-light [class*="text-slate-600"] {
+  color: #143f78 !important;
+}
+
+.site-chrome-light [class*="text-slate-500"] {
+  color: #52657e !important;
+}
+
+.site-chrome-light [class*="border-[#dceffd]"],
+.site-chrome-light [class*="border-[#eaf3ff]"],
+.site-chrome-light [class*="border-[#f3f8ff]"],
+.site-chrome-light [class*="border-[#d8eafc]"] {
+  border-color: #dceffd !important;
+}
+
+body [class*="bg-[linear-gradient"] {
+  background: linear-gradient(135deg, #080d15 0%, #102842 58%, #0b1726 100%) !important;
+}
+
+body [class*="text-[#143f78]"],
+body [class*="text-navy"],
+body [class*="text-gray-700"],
+body [class*="text-gray-600"],
+body [class*="text-slate-600"],
+body [class*="text-slate-700"] {
+  color: #edf5ff !important;
+}
+
+body [class*="text-[#4f6382]"],
+body [class*="text-gray-500"],
+body [class*="text-slate-500"] {
+  color: #9eb1c9 !important;
+}
+
+body [class*="border-[#dceffd]"],
+body [class*="border-gray-100"],
+body [class*="border-[#d8eafc]"],
+body [class*="border-[#eaf3ff]"],
+body [class*="border-[#f3f8ff]"] {
+  border-color: rgba(150, 195, 239, 0.16) !important;
+}
+
+body [class*="bg-[#eef6ff]"],
+body [class*="bg-[#edf5ff]"],
+body [class*="bg-[#f4f9ff]"],
+body [class*="bg-gray-100"] {
+  background-color: #142337 !important;
+}
+
+body [class*="shadow-[0_"] {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28) !important;
 }
 
 .testimonial-marquee {
@@ -50,8 +171,8 @@ body {
 }
 
 ::selection {
-  background: #dceffd;
-  color: #0d2b4f;
+  background: #78baff;
+  color: #07101d;
 }
 
 a {
@@ -64,7 +185,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#eef5ff];
+  background: #0a111c;
 }
 
 ::-webkit-scrollbar-thumb {
