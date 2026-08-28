@@ -4,11 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const serviceGroups = [
+  {
+    title: "Design",
+    links: ["UI/UX Design", "Web Design", "Graphic Design", "Branding & Identity"],
+  },
+  {
+    title: "Development",
+    links: ["Website Development", "E-commerce Development", "Shopify Development", "WordPress Development"],
+  },
+  {
+    title: "Digital",
+    links: ["Digital Marketing", "SEO", "Social Media Marketing", "Content Creation"],
+  },
+];
+
+const slugify = (value: string) => value.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -21,9 +39,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
-    
   ];
 
   return (
@@ -71,6 +87,63 @@ export default function Navbar() {
                 </motion.div>
               );
             })}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                type="button"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                onClick={() => setIsServicesOpen((open) => !open)}
+                className={`inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                  pathname.startsWith("/services") || isServicesOpen
+                    ? "bg-[#edf5ff] text-navy"
+                    : "text-gold hover:bg-[#f4f9ff] hover:text-navy"
+                }`}
+              >
+                Services
+                <ChevronDown size={14} className={`transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
+              </motion.button>
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute right-0 top-full mt-3 w-[min(680px,calc(100vw-3rem))] rounded-2xl border border-[#dceffd] bg-white p-7 shadow-[0_20px_50px_rgba(20,63,120,0.14)]"
+                  >
+                    <div className="mb-6 flex items-center justify-between border-b border-[#edf3fa] pb-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.24em] text-navy">Services</p>
+                      <span className="text-xs text-slate-400">Design. Develop. Dream.</span>
+                    </div>
+                    <div className="grid gap-7 sm:grid-cols-3">
+                      {serviceGroups.map((group) => (
+                        <div key={group.title}>
+                          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">{group.title}</p>
+                          <div className="space-y-1">
+                            {group.links.map((service) => (
+                              <Link
+                                key={service}
+                                href={`/services/${slugify(service)}`}
+                                className="block rounded-lg px-2 py-2 text-sm text-slate-600 transition-all duration-200 hover:bg-[#f4f9ff] hover:pl-3 hover:text-navy"
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                {service}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/contact"
@@ -118,6 +191,43 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <div className="border-b border-[#f3f8ff]">
+                <button
+                  type="button"
+                  aria-expanded={isServicesOpen}
+                  onClick={() => setIsServicesOpen((open) => !open)}
+                  className="flex w-full items-center justify-between px-2 py-3 text-left font-semibold text-gold transition-colors hover:text-navy"
+                >
+                  Services
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden pb-3 pl-2"
+                    >
+                      {serviceGroups.map((group) => (
+                        <div key={group.title} className="mb-4 last:mb-0">
+                          <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">{group.title}</p>
+                          {group.links.map((service) => (
+                            <Link
+                              key={service}
+                              href={`/services/${slugify(service)}`}
+                              onClick={() => { setIsOpen(false); setIsServicesOpen(false); }}
+                              className="block rounded-md px-2 py-2 text-sm text-slate-600 transition-colors hover:bg-[#f4f9ff] hover:text-navy"
+                            >
+                              {service}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
