@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FaLinkedin, FaBehance } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Schema from "@/components/Schema";
 
@@ -19,12 +19,6 @@ const contactInfo = [
     label: "Phone",
     value: "+92 305 7662 662",
     href: "tel:+923057662662",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Faisalabad, Pakistan",
-    href: "#",
   },
 ];
 
@@ -52,6 +46,13 @@ export default function ContactPage() {
 
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const isMountedRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,13 +69,17 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       .then(() => {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        formRef.current?.reset();
+        if (isMountedRef.current) {
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+          formRef.current?.reset();
+        }
       })
       .catch((error) => {
-        console.error("EmailJS error:", error);
-        setStatus("error");
+        if (isMountedRef.current) {
+          console.error("EmailJS error:", error);
+          setStatus("error");
+        }
       });
   };
 

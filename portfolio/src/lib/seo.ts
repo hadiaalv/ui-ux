@@ -141,11 +141,7 @@ export function buildLocalBusinessSchema() {
     image: `${siteConfig.url}/Dreamital%20Logo%201.svg`,
     url: siteConfig.url,
     telephone: "+923057662662",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Faisalabad",
-      addressCountry: "PK",
-    },
+
     areaServed: "Pakistan",
     priceRange: "$$",
     sameAs: [

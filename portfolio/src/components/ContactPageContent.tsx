@@ -18,12 +18,6 @@ const contactInfo = [
     value: "+92 305 7662 662",
     href: "tel:+923057662662",
   },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Faisalabad, Pakistan",
-    href: "#",
-  },
 ];
 
 const socialLinks = [

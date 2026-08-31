@@ -129,10 +129,6 @@ export default function Footer() {
                   +92 305 7662 662
                 </a>
               </motion.li>
-              <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.3 }} className="flex items-start gap-3 text-sm text-slate-300">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-[#8ec6ff]" />
-                Faisalabad, Pakistan
-              </motion.li>
             </ul>
           </div>
         </div>
