@@ -104,7 +104,7 @@ export default function ContactPage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-4 text-3xl font-bold text-white md:text-5xl"
             >
-              Let&apos;s Start a Project
+              Let&apos;s shape the next step
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function ContactPage() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg leading-relaxed text-[#e9f4ff]"
             >
-              Have a project in mind? Let&apos;s work together to create something amazing.
+              Ready to transform your vision into reality? Let&apos;s work together to create something amazing.
             </motion.p>
           </motion.div>
         </div>
