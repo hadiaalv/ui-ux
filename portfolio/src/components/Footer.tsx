@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const socialLinks = [
   {
     Icon: FaLinkedin,
-    href: "https://www.linkedin.com/in/hassan-riaz-21249a210/",
+    href: "https://www.linkedin.com/company/dreamital-web/",
     label: "LinkedIn",
   },
   {

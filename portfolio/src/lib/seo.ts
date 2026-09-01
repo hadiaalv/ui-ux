@@ -65,7 +65,9 @@ export function constructMetadata(overrides: Metadata = {}): Metadata {
       images: [siteConfig.image],
     },
     icons: {
-      icon: "/Dreamital Logo 1.svg",
+      icon: "/favicon.jpeg",
+      shortcut: "/favicon.jpeg",
+      apple: "/favicon.jpeg",
     },
     ...overrides,
   };
