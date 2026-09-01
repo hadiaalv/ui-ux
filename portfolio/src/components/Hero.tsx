@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="hero" className="relative isolate overflow-hidden px-6 pb-20 pt-32 md:px-10 md:pb-28 md:pt-36">
+    <section id="hero" className="relative isolate overflow-hidden px-6 pb-10 pt-20 md:px-10 md:pb-12 md:pt-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(117,183,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(43,108,176,0.15),transparent_32%)]" />
       <div className="grid-pattern pointer-events-none absolute inset-0 opacity-80" />
 
@@ -71,12 +71,7 @@ export default function Hero() {
 
               <div className="relative rounded-[2rem] border border-[#dfeafc] bg-white p-5 shadow-[0_24px_70px_rgba(20,63,120,0.08)]">
                 <div className="rounded-[1.5rem] border border-[#e7f0ff] bg-[#f8fbff] p-4">
-                  <div className="mb-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#2b6cb0]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-                    </div>
+                  <div className="mb-4 flex items-center justify-end">
                     <span className="rounded-full border border-[#d7ebff] bg-[#eef5ff] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#2b6cb0]">
                       Live Brief
                     </span>

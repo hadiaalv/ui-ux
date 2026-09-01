@@ -84,7 +84,7 @@ export default function Navbar() {
                 height={74}
                 priority
                 sizes="(max-width: 768px) 52px, 72px"
-                className="h-10 w-auto md:h-12"
+                className="h-11 w-auto md:h-14 lg:h-16"
               />
             </Link>
 

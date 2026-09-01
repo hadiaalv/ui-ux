@@ -45,11 +45,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="px-6 py-24 md:px-10 md:py-28">
+    <section className="px-6 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl">
           <span className="eyebrow">What we do</span>
-          <h2 className="mt-5 text-3xl font-black tracking-[-0.05em] text-[#0d1b2d] md:text-5xl">
+          <h2 className="mt-4 text-4xl font-extrabold leading-[0.9] tracking-[-0.06em] text-[#0d1b2d] md:text-6xl">
             Strategy, design, and digital execution for modern brands.
           </h2>
         </div>
@@ -90,7 +90,7 @@ export default function Services() {
           })}
         </div>
 
-        <div className="mt-14 text-left md:text-center">
+        <div className="mt-10 text-left md:text-center">
           <Link href="/contact" className="primary-button px-6 py-3.5 text-sm md:text-base">
             Discuss your project
             <ArrowRight size={18} />

@@ -34,12 +34,12 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="px-6 py-24 md:px-10 md:py-28">
+    <section className="px-6 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <span className="eyebrow">Recent work</span>
-            <h2 className="mt-5 text-3xl font-black tracking-[-0.05em] text-[#0d1b2d] md:text-5xl">
+            <h2 className="mt-4 text-4xl font-extrabold leading-[0.9] tracking-[-0.06em] text-[#0d1b2d] md:text-6xl">
               Selected projects built for momentum.
             </h2>
           </div>

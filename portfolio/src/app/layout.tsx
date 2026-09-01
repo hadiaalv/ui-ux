@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <Navbar />
-        <main className="min-h-screen pt-[134px] md:pt-[146px]">{children}</main>
+        <main className="min-h-screen pt-[116px] md:pt-[124px]">{children}</main>
         <Footer />
       </body>
     </html>

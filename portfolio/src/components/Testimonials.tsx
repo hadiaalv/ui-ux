@@ -50,17 +50,17 @@ export default function Testimonials() {
   const cards = [...testimonials, ...testimonials];
 
   return (
-    <section className="overflow-hidden bg-[#f7fbff] py-20 md:py-24" aria-labelledby="testimonials-heading">
-      <div className="mx-auto mb-12 max-w-7xl px-6 text-center md:mb-16 md:px-16">
+    <section className="overflow-hidden bg-[#f7fbff] py-10 md:py-12" aria-labelledby="testimonials-heading">
+      <div className="mx-auto mb-8 max-w-7xl px-6 text-center md:mb-10 md:px-16">
         <motion.h2
           id="testimonials-heading"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold tracking-[0.08em] text-[#0d1b2d] md:text-5xl"
+          className="text-4xl font-extrabold tracking-[-0.06em] text-[#0d1b2d] md:text-6xl"
         >
-          WHAT PEOPLE ARE SAYING
+          What people are saying
         </motion.h2>
       </div>
 

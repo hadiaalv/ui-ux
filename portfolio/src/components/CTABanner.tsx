@@ -11,7 +11,7 @@ export default function CTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden bg-[linear-gradient(135deg,#f0f5ff_0%,#fafbff_100%)] px-6 py-24 md:px-16 md:py-32"
+      className="relative overflow-hidden bg-[linear-gradient(135deg,#f0f5ff_0%,#fafbff_100%)] px-6 py-10 md:px-16 md:py-12"
     >
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center">
         <motion.div
@@ -28,7 +28,7 @@ export default function CTABanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.02em] text-[#0d1b2d]"
+          className="text-4xl font-extrabold leading-[0.9] tracking-[-0.06em] text-[#0d1b2d] md:text-6xl"
         >
           Let&apos;s shape the next step.
         </motion.h2>
