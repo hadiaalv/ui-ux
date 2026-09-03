@@ -14,7 +14,7 @@ export default function Schema({ path = "/" }: { path?: string }) {
   const website = buildWebsiteSchema();
   const page = buildWebPageSchema(path);
   const breadcrumb = buildBreadcrumbSchema([
-    { name: "Home", url: "https://dreamitalweb.com/" },
+    { name: "Home", url: "https://dreamital.com/" },
     { name: path === "/" ? "Home" : path.replace(/\//g, " ").trim(), url: `https://dreamitalweb.com${path}` },
   ]);
   const localBusiness = buildLocalBusinessSchema();

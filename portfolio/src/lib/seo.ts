@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "Dreamital Web | UI/UX Design, Creative Strategy & Digital Experiences",
   description:
     "Dreamital Web creates premium UI/UX design systems, digital experiences, and polished brand-led websites for modern businesses.",
-  url: "https://dreamitalweb.com",
+  url: "https://dreamital.com",
   locale: "en_US",
   keywords: [
     "UI/UX design",

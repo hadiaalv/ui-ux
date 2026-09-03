@@ -16,7 +16,7 @@ const serviceSlugs = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dreamitalweb.com";
+  const baseUrl = "https://dreamital.com";
 
   return [
     {
