@@ -289,12 +289,7 @@ export default function ServicePageContent({ service }: { service: Service }) {
             <div className="absolute -bottom-4 right-2 h-40 w-40 rounded-full bg-[#daeaff]/70 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-[2rem] border border-[#dfeafc] bg-white p-5 shadow-[0_25px_80px_rgba(20,63,120,0.08)]">
-              <div className="mb-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#143f78]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-                </div>
+              <div className="mb-4 flex justify-end">
                 <span className="rounded-full border border-[#dfeafc] bg-[#eef5ff] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#2b6cb0]">
                   {visual.badge}
                 </span>

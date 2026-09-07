@@ -81,7 +81,7 @@ export function buildOrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/Dreamital%20Logo%201.svg`,
     sameAs: [
-      "https://www.linkedin.com/in/hassan-riaz-21249a210/",
+      "https://www.linkedin.com/company/dreamital-web",
       "https://www.behance.net/iconsstock",
     ],
     contactPoint: [
@@ -147,7 +147,7 @@ export function buildLocalBusinessSchema() {
     areaServed: "Pakistan",
     priceRange: "$$",
     sameAs: [
-      "https://www.linkedin.com/in/hassan-riaz-21249a210/",
+      "https://www.linkedin.com/company/dreamital-web",
       "https://www.behance.net/iconsstock",
     ],
   };
