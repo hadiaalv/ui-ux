@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const socialLinks = [
   {
     Icon: FaLinkedin,
-    href: "https://www.linkedin.com/company/dreamital-web/",
+    href: "https://www.linkedin.com/company/dreamital-web",
     label: "LinkedIn",
   },
   {
