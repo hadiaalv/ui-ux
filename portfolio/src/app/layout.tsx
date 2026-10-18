@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import type { ReactNode } from "react";
 import { constructMetadata } from "@/lib/seo";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen pt-[116px] md:pt-[124px]">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
